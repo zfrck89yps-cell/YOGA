@@ -183,7 +183,6 @@ function renderHome() {
   root.innerHTML = `
     <main class="app-bg home-bg home-simple">
       <section class="home-actions" aria-label="Continuum home">
-        <img class="home-logo" src="./assets/icons/apple-touch-icon.png" alt="Continuum Yoga" />
         <button class="home-btn primary" type="button" data-action="builder">Today's session</button>
         <button class="home-btn" type="button" data-action="last" ${hasLast ? "" : "disabled"}>Last session</button>
       </section>
@@ -197,14 +196,19 @@ function renderBuilder() {
   const foundationDone = Math.min(28, state.settings.completedSessions);
   const emphasisKey = stage === "foundation" ? "full_body" : getTodaysEmphasis({ isoDate: toISODate(), stage });
 
+  const energyOptions = [
+    { value: 1, label: "1 (Very low)" },
+    { value: 2, label: "2 (Low)" },
+    { value: 3, label: "3 (Moderate)" },
+    { value: 4, label: "4 (High)" },
+    { value: 5, label: "5 (Very high)" }
+  ];
+
   root.innerHTML = `
-    <main class="app-bg home-bg builder-bg">
+    <main class="app-bg session-bg builder-bg">
       <header class="builder-header">
         <button class="back-btn" type="button" data-action="home">Back</button>
-        <div>
-          <p class="section-label">TODAY'S SESSION BUILDER</p>
-          <h1>${stage === "foundation" ? "Foundation full body" : `Full body + ${EMPHASIS_LABELS[emphasisKey] || emphasisKey}`}</h1>
-          <p>${FIXED_POSE_COUNT} poses · ordered for sensible flow</p>
+        <div><h1>Session builder</h1>
         </div>
       </header>
 
@@ -212,37 +216,62 @@ function renderBuilder() {
         <div class="builder-grid">
           <label>Energy
             <select data-setting="energy">
-              ${[1,2,3,4,5].map(n => `<option value="${n}" ${Number(state.settings.energy)===n?'selected':''}>${n}</option>`).join("")}
+              ${energyOptions.map(o => `
+                <option value="${o.value}" ${Number(state.settings.energy) === o.value ? 'selected' : ''}>
+                  ${o.label}
+                </option>
+              `).join("")}
             </select>
           </label>
+
           <label>Mood
             <select data-setting="mood">
-              ${[1,2,3,4,5].map(n => `<option value="${n}" ${Number(state.settings.mood)===n?'selected':''}>${n}</option>`).join("")}
+              ${energyOptions.map(o => `
+                <option value="${o.value}" ${Number(state.settings.mood) === o.value ? 'selected' : ''}>
+                  ${o.label}
+                </option>
+              `).join("")}
             </select>
           </label>
+
           <div class="builder-status">
-            <strong>${stage === "foundation" ? `${foundationDone}/28` : `${Math.round(progress.score * 100)}%`}</strong>
-            <span>${stage === "foundation" ? "foundation progress" : "progression depth"}</span>
+            <strong>
+              ${stage === "foundation"
+                ? `${foundationDone} / 28`
+                : `${Math.round(progress.score * 100)}%`}
+            </strong>
+            <span>
+              ${stage === "foundation"
+                ? "Foundation"
+                : "Progression"}
+            </span>
           </div>
         </div>
 
         <p class="section-label injury-label">Injury / exclusion bias</p>
         <div class="chips">
-          ${INJURY_OPTIONS.map(([tag,label]) => `<button type="button" class="chip ${state.settings.injuryTags.includes(tag) ? 'active' : ''}" data-injury="${tag}">${label}</button>`).join("")}
+          ${INJURY_OPTIONS.map(([tag,label]) => `
+            <button type="button"
+              class="chip ${state.settings.injuryTags.includes(tag) ? 'active' : ''}"
+              data-injury="${tag}">
+              ${label}
+            </button>
+          `).join("")}
         </div>
       </section>
 
-      <button class="big-start" type="button" data-action="generate">Build today's session</button>
+      <button class="big-start" type="button" data-action="generate">
+        Build today's session
+      </button>
     </main>
   `;
 }
-
 function renderSession() {
   const s = state.session || state.settings.lastSession;
   if (!s) return route("builder");
 
   const cards = [
-    `<article class="session-card intro-card"><p>${new Date().toLocaleDateString("en-GB", { weekday: "long" })}</p><h2>${EMPHASIS_LABELS[s.emphasisKey] || "Full body"}</h2><span>${sessionSubtitle(s)}</span></article>`,
+    `<article class="session-card intro-card"><h2>${EMPHASIS_LABELS[s.emphasisKey] || "Full body"}</h2><span>${s.phase === "foundation" ? "Foundation" : "Weekly emphasis"}</span></article>`,
     ...s.steps.map((step, i) => {
       const img = state.resolver.getImagePath(step.poseId);
       return `<article class="session-card pose-card">
@@ -258,7 +287,8 @@ function renderSession() {
     <main class="app-bg session-bg">
       <header class="session-header">
         <button class="back-btn" type="button" data-action="home">Back</button>
-        <div><h1>${new Date().toLocaleDateString("en-GB", { weekday: "long" })} yoga</h1><p>${sessionSubtitle(s)}</p></div>
+        <div><h1>${new Date().toLocaleDateString("en-GB", { weekday: "long" })} yoga</h1
+        </div>
       </header>
       <section class="session-grid">${cards}</section>
     </main>

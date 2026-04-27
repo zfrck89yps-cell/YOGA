@@ -1,6 +1,6 @@
 :root{
   --peach:#B77A6A;
-  --peach-bright:#C07F6D;
+  --peach-bright:#A86557;
   --orange:#B77A6A;
   --text:#fff;
   --dark:rgba(0,0,0,.72);
@@ -30,7 +30,7 @@ button:disabled{cursor:not-allowed;opacity:.45}
 .app-bg{
   min-height:100vh;
   padding:clamp(16px,2.2vw,32px);
-  background-size:cover;
+  background-size:contain;
   background-position:center;
   position:relative;
   overflow-x:hidden;
@@ -227,7 +227,6 @@ button:disabled{cursor:not-allowed;opacity:.45}
   font-weight:950;
   padding:20px;
   box-shadow:var(--shadow);
-  text-shadow:var(--text-outline);
 }
 
 .session-header{
@@ -241,13 +240,6 @@ button:disabled{cursor:not-allowed;opacity:.45}
   margin:0;
   color:var(--peach-bright);
   font-size:clamp(28px,4vw,46px);
-  text-shadow:var(--text-outline);
-}
-
-.session-header p{
-  margin:2px 0 0;
-  color:#fff;
-  font-weight:850;
   text-shadow:var(--text-outline);
 }
 
@@ -280,7 +272,6 @@ button:disabled{cursor:not-allowed;opacity:.45}
   font-weight:950;
   color:var(--peach-bright);
   margin:0;
-  text-shadow:var(--text-outline);
 }
 
 .intro-card h2{
@@ -288,13 +279,11 @@ button:disabled{cursor:not-allowed;opacity:.45}
   line-height:1.05;
   color:var(--peach-bright);
   margin:8px 0;
-  text-shadow:var(--text-outline);
 }
 
 .intro-card span{
   font-weight:800;
   color:#fff;
-  text-shadow:var(--text-outline);
 }
 
 .pose-card{
@@ -319,7 +308,6 @@ button:disabled{cursor:not-allowed;opacity:.45}
   font-weight:950;
   color:#fff;
   font-size:13px;
-  text-shadow:var(--text-outline);
 }
 
 .pose-caption{
@@ -334,7 +322,6 @@ button:disabled{cursor:not-allowed;opacity:.45}
   display:block;
   font-size:13px;
   line-height:1.15;
-  text-shadow:var(--text-outline);
 }
 
 .pose-caption small{
@@ -343,7 +330,6 @@ button:disabled{cursor:not-allowed;opacity:.45}
   font-size:11px;
   font-weight:800;
   margin-top:2px;
-  text-shadow:var(--text-outline);
 }
 
 .complete-card{
@@ -352,14 +338,12 @@ button:disabled{cursor:not-allowed;opacity:.45}
   font-weight:950;
   font-size:22px;
   background:rgba(0,0,0,.48);
-  text-shadow:var(--text-outline);
 }
 
 .missing-img{
   padding:20px;
   text-align:center;
   font-weight:900;
-  text-shadow:var(--text-outline);
 }
 
 .error{
