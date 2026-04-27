@@ -1,0 +1,106 @@
+[
+  {
+    "id": "hands_to_floor",
+    "text": "Place your hands down to the floor."
+  },
+  {
+    "id": "kneel_down",
+    "text": "Lower your knees down to the floor."
+  },
+  {
+    "id": "lower_to_belly",
+    "text": "Lower all the way down onto your belly with control."
+  },
+  {
+    "id": "lower_to_elbows",
+    "text": "Lower down gently onto your elbows."
+  },
+  {
+    "id": "lower_to_seat",
+    "text": "Lower down and come into a seated position."
+  },
+  {
+    "id": "press_to_table",
+    "text": "Press back up to hands and knees, into tabletop."
+  },
+  {
+    "id": "press_up_to_seated",
+    "text": "Press into your hands and come up to seated."
+  },
+  {
+    "id": "press_up_to_tabletop",
+    "text": "Press up to hands and knees, into tabletop."
+  },
+  {
+    "id": "return_to_tabletop",
+    "text": "Return to tabletop, onto hands and knees."
+  },
+  {
+    "id": "rise_up",
+    "text": "Slowly rise up to standing."
+  },
+  {
+    "id": "roll_down",
+    "text": "Soften your knees and roll down slowly, one vertebra at a time."
+  },
+  {
+    "id": "roll_to_back",
+    "text": "Roll onto your back with control."
+  },
+  {
+    "id": "roll_to_seated",
+    "text": "Roll up and come back to seated."
+  },
+  {
+    "id": "roll_to_side",
+    "text": "Roll onto your side with control."
+  },
+  {
+    "id": "shift_weight_back",
+    "text": "Shift your weight back slightly."
+  },
+  {
+    "id": "shift_weight_forward",
+    "text": "Shift your weight forward slightly."
+  },
+  {
+    "id": "step_back_lunge",
+    "text": "Step one foot back into a lunge."
+  },
+  {
+    "id": "step_back_to_plank",
+    "text": "Step one foot back, then the other, into plank."
+  },
+  {
+    "id": "step_feet_together",
+    "text": "Step your feet together."
+  },
+  {
+    "id": "step_feet_wider",
+    "text": "Step your feet wider apart."
+  },
+  {
+    "id": "step_forward_lunge",
+    "text": "Step one foot forward between your hands into a lunge."
+  },
+  {
+    "id": "step_forward_to_fold",
+    "text": "Step your feet forward to meet your hands, into a forward fold."
+  },
+  {
+    "id": "swing_legs_back",
+    "text": "Place your hands down, then step or swing your legs back."
+  },
+  {
+    "id": "swing_legs_forward",
+    "text": "Swing or step your legs forward and come back to seated."
+  },
+  {
+    "id": "walk_hands_back",
+    "text": "Walk your hands back toward your feet."
+  },
+  {
+    "id": "walk_hands_forward",
+    "text": "Walk your hands forward."
+  }
+]

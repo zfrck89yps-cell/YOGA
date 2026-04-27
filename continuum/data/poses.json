@@ -1,0 +1,925 @@
+{
+  "version": "v1",
+  "pose_count": 91,
+  "poses": [
+    {
+      "pose_id": "bird_dog",
+      "title": "Bird Dog",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/bird_dog.png"
+    },
+    {
+      "pose_id": "bound_angle",
+      "title": "Bound Angle",
+      "stage": {
+        "id": 1,
+        "slug": "stage-1-foundations"
+      },
+      "image": "assets/images/poses/stage-1-foundations/bound_angle.png"
+    },
+    {
+      "pose_id": "bridge",
+      "title": "Bridge",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/bridge.png"
+    },
+    {
+      "pose_id": "camel",
+      "title": "Camel",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/camel.png"
+    },
+    {
+      "pose_id": "cat_cow",
+      "title": "Cat-Cow",
+      "stage": {
+        "id": 1,
+        "slug": "stage-1-foundations"
+      },
+      "image": "assets/images/poses/stage-1-foundations/cat_cow.png"
+    },
+    {
+      "pose_id": "chair",
+      "title": "Chair",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/chair.png"
+    },
+    {
+      "pose_id": "childs_pose",
+      "title": "Child's Pose",
+      "stage": {
+        "id": 1,
+        "slug": "stage-1-foundations"
+      },
+      "image": "assets/images/poses/stage-1-foundations/childs_pose.png"
+    },
+    {
+      "pose_id": "cobra",
+      "title": "Cobra",
+      "stage": {
+        "id": 1,
+        "slug": "stage-1-foundations"
+      },
+      "image": "assets/images/poses/stage-1-foundations/cobra.png"
+    },
+    {
+      "pose_id": "corpse",
+      "title": "Corpse",
+      "stage": {
+        "id": 1,
+        "slug": "stage-1-foundations"
+      },
+      "image": "assets/images/poses/stage-1-foundations/corpse.png"
+    },
+    {
+      "pose_id": "cow_face",
+      "title": "Cow Face",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/cow_face.png"
+    },
+    {
+      "pose_id": "crescent_lunge",
+      "title": "Crescent Lunge",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/crescent_lunge.png"
+    },
+    {
+      "pose_id": "dancer",
+      "title": "Dancer",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/dancer.png"
+    },
+    {
+      "pose_id": "downward_dog",
+      "title": "Downward Dog",
+      "stage": {
+        "id": 6,
+        "slug": "stage-6-transitions"
+      },
+      "image": "assets/images/poses/stage-6-transitions/downward_dog.png"
+    },
+    {
+      "pose_id": "easy_seat",
+      "title": "Easy Seat",
+      "stage": {
+        "id": 1,
+        "slug": "stage-1-foundations"
+      },
+      "image": "assets/images/poses/stage-1-foundations/easy_seat.png"
+    },
+    {
+      "pose_id": "extended_side_angle",
+      "title": "Extended Side Angle",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/extended_side_angle.png"
+    },
+    {
+      "pose_id": "forward_fold",
+      "title": "Forward Fold",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/forward_fold.png"
+    },
+    {
+      "pose_id": "gate_pose",
+      "title": "Gate Pose",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/gate_pose.png"
+    },
+    {
+      "pose_id": "half_pigeon",
+      "title": "Half Pigeon",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/half_pigeon.png"
+    },
+    {
+      "pose_id": "half_way_lift",
+      "title": "Half Way Lift",
+      "stage": {
+        "id": 4,
+        "slug": "stage-4-bridges"
+      },
+      "image": "assets/images/poses/stage-4-bridges/half_way_lift.png"
+    },
+    {
+      "pose_id": "happy_baby",
+      "title": "Happy Baby",
+      "stage": {
+        "id": 1,
+        "slug": "stage-1-foundations"
+      },
+      "image": "assets/images/poses/stage-1-foundations/happy_baby.png"
+    },
+    {
+      "pose_id": "hover",
+      "title": "Hover",
+      "stage": {
+        "id": 6,
+        "slug": "stage-6-transitions"
+      },
+      "image": "assets/images/poses/stage-6-transitions/hover.png"
+    },
+    {
+      "pose_id": "lizard",
+      "title": "Lizard",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/lizard.png"
+    },
+    {
+      "pose_id": "locust",
+      "title": "Locust",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/locust.png"
+    },
+    {
+      "pose_id": "low_lunge",
+      "title": "Low Lunge",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/low_lunge.png"
+    },
+    {
+      "pose_id": "mountain",
+      "title": "Mountain",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/mountain.png"
+    },
+    {
+      "pose_id": "mountain_climbers",
+      "title": "Mountain Climbers",
+      "stage": {
+        "id": 6,
+        "slug": "stage-6-transitions"
+      },
+      "image": "assets/images/poses/stage-6-transitions/mountain_climbers.png"
+    },
+    {
+      "pose_id": "plank",
+      "title": "Plank",
+      "stage": {
+        "id": 6,
+        "slug": "stage-6-transitions"
+      },
+      "image": "assets/images/poses/stage-6-transitions/plank.png"
+    },
+    {
+      "pose_id": "puppy_pose",
+      "title": "Puppy Pose",
+      "stage": {
+        "id": 1,
+        "slug": "stage-1-foundations"
+      },
+      "image": "assets/images/poses/stage-1-foundations/puppy_pose.png"
+    },
+    {
+      "pose_id": "reverse_warrior",
+      "title": "Reverse Warrior",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/reverse_warrior.png"
+    },
+    {
+      "pose_id": "runners_lunge",
+      "title": "Runner's Lunge",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/runners_lunge.png"
+    },
+    {
+      "pose_id": "seated_eagle_arms",
+      "title": "Seated Eagle Arms",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/seated_eagle_arms.png"
+    },
+    {
+      "pose_id": "seated_forward_fold",
+      "title": "Seated Forward Fold",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/seated_forward_fold.png"
+    },
+    {
+      "pose_id": "seated_side_bend",
+      "title": "Seated Side Bend",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/seated_side_bend.png"
+    },
+    {
+      "pose_id": "seated_twist",
+      "title": "Seated Twist",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/seated_twist.png"
+    },
+    {
+      "pose_id": "side_lunge",
+      "title": "Side Lunge",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/side_lunge.png"
+    },
+    {
+      "pose_id": "side_plank",
+      "title": "Side Plank",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/side_plank.png"
+    },
+    {
+      "pose_id": "sphinx",
+      "title": "Sphinx",
+      "stage": {
+        "id": 1,
+        "slug": "stage-1-foundations"
+      },
+      "image": "assets/images/poses/stage-1-foundations/sphinx.png"
+    },
+    {
+      "pose_id": "squat",
+      "title": "Squat",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/squat.png"
+    },
+    {
+      "pose_id": "staff_pose",
+      "title": "Staff Pose",
+      "stage": {
+        "id": 1,
+        "slug": "stage-1-foundations"
+      },
+      "image": "assets/images/poses/stage-1-foundations/staff_pose.png"
+    },
+    {
+      "pose_id": "standing_side_bend",
+      "title": "Standing Side Bend",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/standing_side_bend.png"
+    },
+    {
+      "pose_id": "supine_leg_stretch",
+      "title": "Supine Leg Stretch",
+      "stage": {
+        "id": 1,
+        "slug": "stage-1-foundations"
+      },
+      "image": "assets/images/poses/stage-1-foundations/supine_leg_stretch.png"
+    },
+    {
+      "pose_id": "supine_pelvic_tilt",
+      "title": "Supine Pelvic Tilt",
+      "stage": {
+        "id": 1,
+        "slug": "stage-1-foundations"
+      },
+      "image": "assets/images/poses/stage-1-foundations/supine_pelvic_tilt.png"
+    },
+    {
+      "pose_id": "supine_twist",
+      "title": "Supine Twist",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/supine_twist.png"
+    },
+    {
+      "pose_id": "table_top",
+      "title": "Table Top",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/table_top.png"
+    },
+    {
+      "pose_id": "three_legged_dog",
+      "title": "Three-Legged Dog",
+      "stage": {
+        "id": 4,
+        "slug": "stage-4-bridges"
+      },
+      "image": "assets/images/poses/stage-4-bridges/three_legged_dog.png"
+    },
+    {
+      "pose_id": "tree",
+      "title": "Tree",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/tree.png"
+    },
+    {
+      "pose_id": "triangle",
+      "title": "Triangle",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/triangle.png"
+    },
+    {
+      "pose_id": "warrior_one",
+      "title": "Warrior I",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/warrior_one.png"
+    },
+    {
+      "pose_id": "warrior_three",
+      "title": "Warrior III",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/warrior_three.png"
+    },
+    {
+      "pose_id": "warrior_two",
+      "title": "Warrior II",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/warrior_two.png"
+    },
+    {
+      "pose_id": "wide_leg_forward_fold",
+      "title": "Wide-Leg Forward Fold",
+      "stage": {
+        "id": 2,
+        "slug": "stage-2-upright"
+      },
+      "image": "assets/images/poses/stage-2-upright/wide_leg_forward_fold.png"
+    },
+    {
+      "pose_id": "wide_leg_squat",
+      "title": "Wide-Leg Squat",
+      "stage": {
+        "id": 3,
+        "slug": "stage-3-grounded"
+      },
+      "image": "assets/images/poses/stage-3-grounded/wide_leg_squat.png"
+    },
+    {
+      "pose_id": "wild_thing",
+      "title": "Wild Thing",
+      "stage": {
+        "id": 5,
+        "slug": "stage-5-rotations"
+      },
+      "image": "assets/images/poses/stage-5-rotations/wild_thing.png"
+    },
+    {
+      "id": "hands_to_floor",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Hands To Floor"
+    },
+    {
+      "id": "kneel_down",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Kneel Down"
+    },
+    {
+      "id": "lower_to_belly",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Lower To Belly"
+    },
+    {
+      "id": "lower_to_elbows",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Lower To Elbows"
+    },
+    {
+      "id": "lower_to_seat",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Lower To Seat"
+    },
+    {
+      "id": "press_to_table",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Press To Table"
+    },
+    {
+      "id": "press_up_to_seated",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Press Up To Seated"
+    },
+    {
+      "id": "press_up_to_tabletop",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Press Up To Tabletop"
+    },
+    {
+      "id": "return_to_tabletop",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Return To Tabletop"
+    },
+    {
+      "id": "rise_up",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Rise Up"
+    },
+    {
+      "id": "roll_down",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Roll Down"
+    },
+    {
+      "id": "roll_to_back",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Roll To Back"
+    },
+    {
+      "id": "roll_to_seated",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Roll To Seated"
+    },
+    {
+      "id": "roll_to_side",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Roll To Side"
+    },
+    {
+      "id": "shift_weight_back",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Shift Weight Back"
+    },
+    {
+      "id": "shift_weight_forward",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Shift Weight Forward"
+    },
+    {
+      "id": "step_back_lunge",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Step Back Lunge"
+    },
+    {
+      "id": "step_back_to_plank",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Step Back To Plank"
+    },
+    {
+      "id": "step_feet_together",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Step Feet Together"
+    },
+    {
+      "id": "step_feet_wider",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Step Feet Wider"
+    },
+    {
+      "id": "step_forward_lunge",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Step Forward Lunge"
+    },
+    {
+      "id": "step_forward_to_fold",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Step Forward To Fold"
+    },
+    {
+      "id": "swing_legs_back",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Swing Legs Back"
+    },
+    {
+      "id": "swing_legs_forward",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Swing Legs Forward"
+    },
+    {
+      "pose_id": "roll_down",
+      "title": "Roll Down",
+      "stage": {
+        "id": 0,
+        "slug": "transitions"
+      },
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "image": null
+    },
+    {
+      "pose_id": "step_back_lunge",
+      "title": "Step Back Lunge",
+      "stage": {
+        "id": 0,
+        "slug": "transitions"
+      },
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "image": null
+    },
+    {
+      "pose_id": "step_forward_lunge",
+      "title": "Step Forward Lunge",
+      "stage": {
+        "id": 0,
+        "slug": "transitions"
+      },
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "image": null
+    },
+    {
+      "pose_id": "kneel_down",
+      "title": "Kneel Down",
+      "stage": {
+        "id": 0,
+        "slug": "transitions"
+      },
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "image": null
+    },
+    {
+      "pose_id": "rise_up",
+      "title": "Rise Up",
+      "stage": {
+        "id": 0,
+        "slug": "transitions"
+      },
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "image": null
+    },
+    {
+      "pose_id": "swing_legs_back",
+      "title": "Swing Legs Back",
+      "stage": {
+        "id": 0,
+        "slug": "transitions"
+      },
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "image": null
+    },
+    {
+      "pose_id": "swing_legs_forward",
+      "title": "Swing Legs Forward",
+      "stage": {
+        "id": 0,
+        "slug": "transitions"
+      },
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "image": null
+    },
+    {
+      "pose_id": "lower_to_elbows",
+      "title": "Lower To Elbows",
+      "stage": {
+        "id": 0,
+        "slug": "transitions"
+      },
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "image": null
+    },
+    {
+      "pose_id": "press_up_to_seated",
+      "title": "Press Up To Seated",
+      "stage": {
+        "id": 0,
+        "slug": "transitions"
+      },
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "image": null
+    },
+    {
+      "pose_id": "lower_to_belly",
+      "title": "Lower To Belly",
+      "stage": {
+        "id": 0,
+        "slug": "transitions"
+      },
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "image": null
+    },
+    {
+      "pose_id": "press_to_table",
+      "title": "Press To Table",
+      "stage": {
+        "id": 0,
+        "slug": "transitions"
+      },
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "image": null
+    },
+    {
+      "pose_id": "roll_to_back",
+      "title": "Roll To Back",
+      "stage": {
+        "id": 0,
+        "slug": "transitions"
+      },
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "image": null
+    },
+    {
+      "id": "walk_hands_back",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Walk Hands Back"
+    },
+    {
+      "id": "walk_hands_forward",
+      "regions": [],
+      "patterns": [
+        "transition"
+      ],
+      "difficultyBand": 0,
+      "contra": [],
+      "restoreScore": 0,
+      "name": "Walk Hands Forward"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Continuum Yoga",
+  "short_name": "Continuum",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f261d",
+  "theme_color": "#2e8b57",
+  "orientation": "landscape",
+  "icons": [
+    { "src": "./assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "./assets/icons/apple-touch-icon.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

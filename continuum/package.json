@@ -1,0 +1,14 @@
+{
+  "name": "continuum",
+  "version": "1.0.0",
+  "description": "Continuum Yoga grid session app",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "start": "vite --host 0.0.0.0",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}
