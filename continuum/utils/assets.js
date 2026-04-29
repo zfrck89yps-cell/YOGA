@@ -1,6 +1,23 @@
 export async function loadJSON(path) {
-  const res = await fetch(path, { cache: "no-cache" });
-  if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
+  // If running in Node (no window object)
+  if (typeof window === "undefined") {
+    const fs = await import("fs/promises");
+    const { fileURLToPath } = await import("url");
+    const { dirname, resolve } = await import("path");
+
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+
+    // resolve relative to /continuum folder
+    const fullPath = resolve(__dirname, "..", path);
+
+    const data = await fs.readFile(fullPath, "utf-8");
+    return JSON.parse(data);
+  }
+
+  // Browser (your app)
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`Failed to load ${path}`);
   return res.json();
 }
 
