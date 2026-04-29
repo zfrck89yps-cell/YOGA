@@ -173,8 +173,8 @@ function phaseScore(p, ctx) {
   if (ctx.usedSet.has(id)) score += 500;
   if (ctx.recentSet.has(id)) score += 7;
   score += Math.max(0, intensity - ctx.targetIntensity) * 2;
-  score += getEmphasisBias(ctx.emphasisKey, p);
-  score += Math.random() * 2.2;
+  score += getEmphasisBias(ctx.emphasisKey, p) * 1.5;  // Slightly amplify emphasis bias
+  score += Math.random() * 1.0;  // Reduce randomness just slightly
 
   return score;
 }
@@ -315,9 +315,29 @@ export function buildSession({
 
   // Backfill if filters/injuries made a phase short. Keep posture order by inserting before corpse.
   while (selected.length < target - (endPose ? 1 : 0)) {
-    const fallback = usablePool
+    // Try usablePool first (respects maxBand difficulty limit)
+    let fallback = usablePool
       .filter((p) => !usedSet.has(getId(p)))
       .sort((a, b) => Math.abs(deriveIntensity(a) - 2) - Math.abs(deriveIntensity(b) - 2))[0];
+    
+    // If usablePool exhausted, try allowed (may exceed maxBand but respects injury constraints)
+    if (!fallback) {
+      fallback = allowed
+        .filter((p) => getId(p) !== START_POSE_ID && getId(p) !== END_POSE_ID)
+        .filter((p) => !usedSet.has(getId(p)))
+        .filter((p) => !(Number(energy) <= 2 && deriveIntensity(p) >= 4))
+        .sort((a, b) => Math.abs(deriveIntensity(a) - 2) - Math.abs(deriveIntensity(b) - 2))[0];
+    }
+    
+    // If allowed pool exhausted, try poseArr (last resort - may include high intensity)
+    if (!fallback) {
+      fallback = poseArr
+        .filter(isRealPose)
+        .filter((p) => getId(p) !== START_POSE_ID && getId(p) !== END_POSE_ID)
+        .filter((p) => !usedSet.has(getId(p)))
+        .sort((a, b) => Math.abs(deriveIntensity(a) - 2) - Math.abs(deriveIntensity(b) - 2))[0];
+    }
+    
     if (!fallback) break;
     selected.push(fallback);
     usedSet.add(getId(fallback));
@@ -325,11 +345,32 @@ export function buildSession({
 
   if (endPose) selected.push(endPose);
 
-  // Ensure fixed pose count while preserving start/end.
+  // Ensure fixed pose count while preserving start/end, avoiding bad jumps.
   let final = selected.filter(Boolean);
   while (final.length > target) {
-    const removeIdx = final.findIndex((p, idx) => idx > 0 && idx < final.length - 1 && getEmphasisBias(emphasisKey, p) >= 0);
-    final.splice(removeIdx === -1 ? final.length - 2 : removeIdx, 1);
+    let removeIdx = -1;
+    // Bad jump patterns that create awkward transitions
+    const badJumps = new Set([
+      "upright>seated", "upright>supine", "upright>prone", "upright>restore",
+      "seated>upright", "grounded>upright", "supine>upright", "prone>upright", "restore>upright",
+      "supine>grounded", "prone>grounded", "restore>grounded"
+    ]);
+    
+    // Find a removable pose that won't create bad flow jumps
+    for (let i = 1; i < final.length - 1; i++) {
+      const curr = final[i];
+      if (getEmphasisBias(emphasisKey, curr) >= 0) {  // Not emphasized
+        const prevPosture = derivePosture(final[i - 1]);
+        const nextPosture = derivePosture(final[i + 1]);
+        const jumpPair = `${prevPosture}>${nextPosture}`;
+        if (!badJumps.has(jumpPair)) {
+          removeIdx = i;
+          break;
+        }
+      }
+    }
+    if (removeIdx === -1) removeIdx = final.length - 2;  // Fallback: remove second-to-last
+    final.splice(removeIdx, 1);
   }
 
   return {
