@@ -3,179 +3,197 @@
 // Storage default: localStorage (browser). Falls back to in-memory (node/tests).
 
 const DEFAULTS = {
-  stage: "foundation", // "foundation" | "build" | "maintain"
-  foundationIndex: 0,
-  buildWeekIndex: 0,
-  maintainWeekIndex: 0,
-  lastDayISO: null,        // for foundation daily tick
-  lastWeekCounter: null,   // for build/maintain weekly tick (counter-based)
+stage: “foundation”,       // “foundation” | “build” | “maintain”
+foundationIndex: 0,
+buildWeekIndex: 0,
+maintainWeekIndex: 0,
+lastDayISO: null,          // for foundation daily tick
+lastWeekCounter: null,     // for build/maintain weekly tick (counter-based)
 };
 
+// —————————————————————————
+// EMPHASIS CYCLE — ordered to complement each other and reduce injury risk.
+//
+// Rationale for this order:
+//   1. spine          — mobilise the spine first; safe foundation for everything
+//   2. hips           — hip mobility feeds into lunge & standing work
+//   3. posterior_chain — hamstrings/glutes; builds on hip mobility from week 2
+//   4. quads_legs     — quad/leg strength; posterior chain prep protects knees
+//   5. shoulders_upper_back — upper body; legs are recovered, shoulders fresh
+//   6. core_balance   — integrate everything; core work is safer on fresh legs
+//   7. restore_full_body — active recovery week before the cycle repeats
+// —————————————————————————
 export const EMPHASIS_CYCLE = [
-  "spine",
-  "hips",
-  "shoulders_upper_back",
-  "posterior_chain",
-  "quads_legs",
-  "core_balance",
-  "restore_full_body",
+“spine”,
+“hips”,
+“posterior_chain”,
+“quads_legs”,
+“shoulders_upper_back”,
+“core_balance”,
+“restore_full_body”,
 ];
 
-// ---------- storage adapter ----------
+// —————————————————————————
+// Storage adapter
+// —————————————————————————
 function getStorage() {
-  if (typeof window !== "undefined" && window.localStorage) return window.localStorage;
+if (typeof window !== “undefined” && window.localStorage) return window.localStorage;
 
-  const mem = new Map();
-  return {
-    getItem: (k) => (mem.has(k) ? mem.get(k) : null),
-    setItem: (k, v) => mem.set(k, v),
-    removeItem: (k) => mem.delete(k),
-  };
+const mem = new Map();
+return {
+getItem:    (k) => (mem.has(k) ? mem.get(k) : null),
+setItem:    (k, v) => mem.set(k, v),
+removeItem: (k) => mem.delete(k),
+};
 }
 
 const storage = getStorage();
-const KEY = "continuum.engine.state.v1";
+const KEY = “continuum.engine.state.v1”;
 
-// ---------- stage alias handling ----------
+// —————————————————————————
+// Stage alias handling
+// —————————————————————————
 export function canonicalizeStage(stage) {
-  const s = String(stage || "").trim().toLowerCase();
-
-  if (!s) return "foundation";
-  if (["foundation", "build", "maintain"].includes(s)) return s;
-
-  if (s === "stage-1-foundations") return "foundation";
-  if (
-    s === "stage-2-upright" ||
-    s === "stage-3-grounded" ||
-    s === "stage-4-bridges" ||
-    s === "stage-5-rotations"
-  ) {
-    return "build";
-  }
-  if (s === "stage-6-transitions") return "maintain";
-
-  return "foundation";
+const s = String(stage || “”).trim().toLowerCase();
+if (!s) return “foundation”;
+if ([“foundation”, “build”, “maintain”].includes(s)) return s;
+if (s === “stage-1-foundations”) return “foundation”;
+if (
+s === “stage-2-upright” ||
+s === “stage-3-grounded” ||
+s === “stage-4-bridges” ||
+s === “stage-5-rotations”
+) return “build”;
+if (s === “stage-6-transitions”) return “maintain”;
+return “foundation”;
 }
 
 export function loadEngineState() {
-  try {
-    const raw = storage.getItem(KEY);
-    if (!raw) return { ...DEFAULTS };
-    const parsed = JSON.parse(raw);
-    return { ...DEFAULTS, ...parsed, stage: canonicalizeStage(parsed?.stage) };
-  } catch {
-    return { ...DEFAULTS };
-  }
+try {
+const raw = storage.getItem(KEY);
+if (!raw) return { …DEFAULTS };
+const parsed = JSON.parse(raw);
+return { …DEFAULTS, …parsed, stage: canonicalizeStage(parsed?.stage) };
+} catch {
+return { …DEFAULTS };
+}
 }
 
 export function saveEngineState(state) {
-  storage.setItem(KEY, JSON.stringify({
-    ...state,
-    stage: canonicalizeStage(state?.stage),
-  }));
+storage.setItem(KEY, JSON.stringify({
+…state,
+stage: canonicalizeStage(state?.stage),
+}));
 }
 
 export function setStage(stage) {
-  const s = canonicalizeStage(stage);
-  const st = loadEngineState();
-  st.stage = s;
-  saveEngineState(st);
-  return st;
+const s = canonicalizeStage(stage);
+const st = loadEngineState();
+st.stage = s;
+saveEngineState(st);
+return st;
 }
 
 export function getStage() {
-  return canonicalizeStage(loadEngineState().stage);
+return canonicalizeStage(loadEngineState().stage);
 }
 
-// ---------- helpers ----------
+// —————————————————————————
+// Date/week helpers
+// —————————————————————————
 export function toISODate(d = new Date()) {
-  const dt = new Date(d);
-  const y = dt.getFullYear();
-  const m = String(dt.getMonth() + 1).padStart(2, "0");
-  const day = String(dt.getDate()).padStart(2, "0");
-  return `${y}-${m}-${day}`;
+const dt = new Date(d);
+const y  = dt.getFullYear();
+const m  = String(dt.getMonth() + 1).padStart(2, “0”);
+const day = String(dt.getDate()).padStart(2, “0”);
+return `${y}-${m}-${day}`;
 }
 
 /**
- * We use a simple "week counter" (every 7 days) for Build/Maintain.
- */
-export function getWeekCounter(isoDate, startISO = null) {
-  const base = startISO ? new Date(startISO + "T00:00:00") : new Date("2026-01-01T00:00:00");
-  const now = new Date(isoDate + "T00:00:00");
+
+- Simple week counter — every 7 days from a base date.
+- Used for build/maintain emphasis rotation.
+  */
+  export function getWeekCounter(isoDate, startISO = null) {
+  const base = startISO
+  ? new Date(startISO + “T00:00:00”)
+  : new Date(“2026-01-01T00:00:00”);
+  const now  = new Date(isoDate + “T00:00:00”);
   const days = Math.floor((now - base) / (24 * 3600 * 1000));
   return Math.floor(days / 7);
-}
+  }
 
-// ---------- public: get today's emphasis ----------
+// —————————————————————————
+// Public: get today’s emphasis
+// —————————————————————————
 export function getTodaysEmphasis({
-  isoDate = toISODate(),
-  weekAnchorISO = null,
-  stage = null,
+isoDate      = toISODate(),
+weekAnchorISO = null,
+stage        = null,
 } = {}) {
-  const st = loadEngineState();
-  const resolvedStage = stage ? canonicalizeStage(stage) : canonicalizeStage(st.stage);
+const st            = loadEngineState();
+const resolvedStage = stage ? canonicalizeStage(stage) : canonicalizeStage(st.stage);
 
-  if (resolvedStage === "foundation") {
-    if (st.lastDayISO !== isoDate) {
-      st.foundationIndex = (st.foundationIndex + 1) % EMPHASIS_CYCLE.length;
-      st.lastDayISO = isoDate;
-      if (!stage) saveEngineState(st);
-    }
-    return EMPHASIS_CYCLE[st.foundationIndex];
-  }
-
-  const counter = getWeekCounter(isoDate, weekAnchorISO);
-
-  if (st.lastWeekCounter !== counter) {
-    if (resolvedStage === "build") {
-      st.buildWeekIndex = (st.buildWeekIndex + 1) % EMPHASIS_CYCLE.length;
-    }
-    if (resolvedStage === "maintain") {
-      st.maintainWeekIndex = (st.maintainWeekIndex + 1) % EMPHASIS_CYCLE.length;
-    }
-    st.lastWeekCounter = counter;
-    if (!stage) saveEngineState(st);
-  }
-
-  const idx = resolvedStage === "build" ? st.buildWeekIndex : st.maintainWeekIndex;
-  return EMPHASIS_CYCLE[idx];
+// Foundation: one emphasis per calendar day, cycling through all seven.
+if (resolvedStage === “foundation”) {
+if (st.lastDayISO !== isoDate) {
+st.foundationIndex = (st.foundationIndex + 1) % EMPHASIS_CYCLE.length;
+st.lastDayISO = isoDate;
+if (!stage) saveEngineState(st);
+}
+return EMPHASIS_CYCLE[st.foundationIndex];
 }
 
-/**
- * decideSessionInputs()
- * Normalises/derives session inputs in one place.
- */
+// Build/maintain: one emphasis per week.
+const counter = getWeekCounter(isoDate, weekAnchorISO);
+
+if (st.lastWeekCounter !== counter) {
+if (resolvedStage === “build”) {
+st.buildWeekIndex = (st.buildWeekIndex + 1) % EMPHASIS_CYCLE.length;
+}
+if (resolvedStage === “maintain”) {
+st.maintainWeekIndex = (st.maintainWeekIndex + 1) % EMPHASIS_CYCLE.length;
+}
+st.lastWeekCounter = counter;
+if (!stage) saveEngineState(st);
+}
+
+const idx = resolvedStage === “build” ? st.buildWeekIndex : st.maintainWeekIndex;
+return EMPHASIS_CYCLE[idx];
+}
+
+// —————————————————————————
+// Public: normalise/derive all session inputs in one place
+// —————————————————————————
 export function decideSessionInputs({
-  stage = null,
-  emphasisKey = null,
-  isoDate = null,
-  weekAnchorISO = null,
-
-  mood = 2,
-  energy = 2,
-  injuryTags = [],
-  progressScore = null,
+stage         = null,
+emphasisKey   = null,
+isoDate       = null,
+weekAnchorISO = null,
+mood          = 2,
+energy        = 2,
+injuryTags    = [],
+progressScore = null,
 } = {}) {
-  const resolvedStage = stage ? canonicalizeStage(stage) : getStage();
-  const resolvedISO = isoDate || toISODate();
+const resolvedStage = stage ? canonicalizeStage(stage) : getStage();
+const resolvedISO   = isoDate || toISODate();
 
-  const resolvedEmphasis =
-    emphasisKey ||
-    getTodaysEmphasis({
-      isoDate: resolvedISO,
-      weekAnchorISO,
-      stage: resolvedStage,
-    });
+const resolvedEmphasis =
+emphasisKey ||
+getTodaysEmphasis({
+isoDate: resolvedISO,
+weekAnchorISO,
+stage: resolvedStage,
+});
 
-  return {
-    stage: resolvedStage,
-    emphasisKey: resolvedEmphasis,
-    isoDate: resolvedISO,
-    weekAnchorISO,
-
-    mood: Number(mood) || 2,
-    energy: Number(energy) || 2,
-    injuryTags: Array.isArray(injuryTags) ? injuryTags : [],
-    progressScore,
-  };
+return {
+stage:         resolvedStage,
+emphasisKey:   resolvedEmphasis,
+isoDate:       resolvedISO,
+weekAnchorISO,
+mood:          Number(mood)   || 2,
+energy:        Number(energy) || 2,
+injuryTags:    Array.isArray(injuryTags) ? injuryTags : [],
+progressScore,
+};
 }
