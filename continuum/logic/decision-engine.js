@@ -3,7 +3,7 @@
 // Storage default: localStorage (browser). Falls back to in-memory (node/tests).
 
 const DEFAULTS = {
-stage: “foundation”,       // “foundation” | “build” | “maintain”
+stage: "foundation",       // "foundation" | "build" | "maintain"
 foundationIndex: 0,
 buildWeekIndex: 0,
 maintainWeekIndex: 0,
@@ -24,20 +24,20 @@ lastWeekCounter: null,     // for build/maintain weekly tick (counter-based)
 //   7. restore_full_body — active recovery week before the cycle repeats
 // —————————————————————————
 export const EMPHASIS_CYCLE = [
-“spine”,
-“hips”,
-“posterior_chain”,
-“quads_legs”,
-“shoulders_upper_back”,
-“core_balance”,
-“restore_full_body”,
+"spine",
+"hips",
+"posterior_chain",
+"quads_legs",
+"shoulders_upper_back",
+"core_balance",
+"restore_full_body",
 ];
 
 // —————————————————————————
 // Storage adapter
 // —————————————————————————
 function getStorage() {
-if (typeof window !== “undefined” && window.localStorage) return window.localStorage;
+if (typeof window !== "undefined" && window.localStorage) return window.localStorage;
 
 const mem = new Map();
 return {
@@ -48,24 +48,24 @@ removeItem: (k) => mem.delete(k),
 }
 
 const storage = getStorage();
-const KEY = “continuum.engine.state.v1”;
+const KEY = "continuum.engine.state.v1";
 
 // —————————————————————————
 // Stage alias handling
 // —————————————————————————
 export function canonicalizeStage(stage) {
-const s = String(stage || “”).trim().toLowerCase();
-if (!s) return “foundation”;
-if ([“foundation”, “build”, “maintain”].includes(s)) return s;
-if (s === “stage-1-foundations”) return “foundation”;
+const s = String(stage || "").trim().toLowerCase();
+if (!s) return "foundation";
+if (["foundation", "build", "maintain"].includes(s)) return s;
+if (s === "stage-1-foundations") return "foundation";
 if (
-s === “stage-2-upright” ||
-s === “stage-3-grounded” ||
-s === “stage-4-bridges” ||
-s === “stage-5-rotations”
-) return “build”;
-if (s === “stage-6-transitions”) return “maintain”;
-return “foundation”;
+s === "stage-2-upright" ||
+s === "stage-3-grounded" ||
+s === "stage-4-bridges" ||
+s === "stage-5-rotations"
+) return "build";
+if (s === "stage-6-transitions") return "maintain";
+return "foundation";
 }
 
 export function loadEngineState() {
@@ -104,8 +104,8 @@ return canonicalizeStage(loadEngineState().stage);
 export function toISODate(d = new Date()) {
 const dt = new Date(d);
 const y  = dt.getFullYear();
-const m  = String(dt.getMonth() + 1).padStart(2, “0”);
-const day = String(dt.getDate()).padStart(2, “0”);
+const m  = String(dt.getMonth() + 1).padStart(2, "0");
+const day = String(dt.getDate()).padStart(2, "0");
 return `${y}-${m}-${day}`;
 }
 
@@ -116,9 +116,9 @@ return `${y}-${m}-${day}`;
   */
   export function getWeekCounter(isoDate, startISO = null) {
   const base = startISO
-  ? new Date(startISO + “T00:00:00”)
-  : new Date(“2026-01-01T00:00:00”);
-  const now  = new Date(isoDate + “T00:00:00”);
+  ? new Date(startISO + "T00:00:00")
+  : new Date("2026-01-01T00:00:00");
+  const now  = new Date(isoDate + "T00:00:00");
   const days = Math.floor((now - base) / (24 * 3600 * 1000));
   return Math.floor(days / 7);
   }
@@ -135,7 +135,7 @@ const st            = loadEngineState();
 const resolvedStage = stage ? canonicalizeStage(stage) : canonicalizeStage(st.stage);
 
 // Foundation: one emphasis per calendar day, cycling through all seven.
-if (resolvedStage === “foundation”) {
+if (resolvedStage === "foundation") {
 if (st.lastDayISO !== isoDate) {
 st.foundationIndex = (st.foundationIndex + 1) % EMPHASIS_CYCLE.length;
 st.lastDayISO = isoDate;
@@ -148,17 +148,17 @@ return EMPHASIS_CYCLE[st.foundationIndex];
 const counter = getWeekCounter(isoDate, weekAnchorISO);
 
 if (st.lastWeekCounter !== counter) {
-if (resolvedStage === “build”) {
+if (resolvedStage === "build") {
 st.buildWeekIndex = (st.buildWeekIndex + 1) % EMPHASIS_CYCLE.length;
 }
-if (resolvedStage === “maintain”) {
+if (resolvedStage === "maintain") {
 st.maintainWeekIndex = (st.maintainWeekIndex + 1) % EMPHASIS_CYCLE.length;
 }
 st.lastWeekCounter = counter;
 if (!stage) saveEngineState(st);
 }
 
-const idx = resolvedStage === “build” ? st.buildWeekIndex : st.maintainWeekIndex;
+const idx = resolvedStage === "build" ? st.buildWeekIndex : st.maintainWeekIndex;
 return EMPHASIS_CYCLE[idx];
 }
 
