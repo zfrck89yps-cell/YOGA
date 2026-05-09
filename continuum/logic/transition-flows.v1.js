@@ -42,7 +42,7 @@ export const TRANSITION_FLOWS = {
       ["press_up_to_tabletop"],
       ["press_to_table"],
       ["return_to_tabletop"],
-      // only if you *must* (or you later tag “needs_vinyasa” or similar)
+      // only if you *must* (or you later tag "needs_vinyasa" or similar)
       ["hands_to_floor", "swing_legs_back"],
       ["hands_to_floor", "step_back_to_plank"],
   ],

@@ -84,11 +84,11 @@ function scoreSequence(ids, ctx) {
 
   if (comingFromFoldish && ids.includes("roll_down")) score += 8;
 
-  // Gentle “nice” micro-adjustments
+  // Gentle "nice" micro-adjustments
   if (ids.includes("shift_weight_back") || ids.includes("shift_weight_forward")) score -= 1;
   if (ids.includes("step_feet_wider") || ids.includes("step_feet_together")) score -= 1;
 
-  // Seated-to-grounded: prefer press-up transitions over “teleporting”
+  // Seated-to-grounded: prefer press-up transitions over "teleporting"
   if (
     (fromPatterns.includes("seated") || fromPatterns.includes("sit")) &&
     looksLikeTableOrPlank(toPatterns)
