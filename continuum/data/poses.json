@@ -9,7 +9,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/bird_dog.png"
+      "image": "assets/images/poses/bird_dog.png"
     },
     {
       "pose_id": "bound_angle",
@@ -18,7 +18,7 @@
         "id": 1,
         "slug": "stage-1-foundations"
       },
-      "image": "assets/images/poses/stage-1-foundations/bound_angle.png"
+      "image": "assets/images/poses/bound_angle.png"
     },
     {
       "pose_id": "bridge",
@@ -27,7 +27,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/bridge.png"
+      "image": "assets/images/poses/bridge.png"
     },
     {
       "pose_id": "camel",
@@ -36,7 +36,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/camel.png"
+      "image": "assets/images/poses/camel.png"
     },
     {
       "pose_id": "cat_cow",
@@ -45,7 +45,7 @@
         "id": 1,
         "slug": "stage-1-foundations"
       },
-      "image": "assets/images/poses/stage-1-foundations/cat_cow.png"
+      "image": "assets/images/poses/cat_cow.png"
     },
     {
       "pose_id": "chair",
@@ -54,7 +54,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/chair.png"
+      "image": "assets/images/poses/chair.png"
     },
     {
       "pose_id": "childs_pose",
@@ -63,7 +63,7 @@
         "id": 1,
         "slug": "stage-1-foundations"
       },
-      "image": "assets/images/poses/stage-1-foundations/childs_pose.png"
+      "image": "assets/images/poses/childs_pose.png"
     },
     {
       "pose_id": "cobra",
@@ -72,7 +72,7 @@
         "id": 1,
         "slug": "stage-1-foundations"
       },
-      "image": "assets/images/poses/stage-1-foundations/cobra.png"
+      "image": "assets/images/poses/cobra.png"
     },
     {
       "pose_id": "corpse",
@@ -81,7 +81,7 @@
         "id": 1,
         "slug": "stage-1-foundations"
       },
-      "image": "assets/images/poses/stage-1-foundations/corpse.png"
+      "image": "assets/images/poses/corpse.png"
     },
     {
       "pose_id": "cow_face",
@@ -90,7 +90,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/cow_face.png"
+      "image": "assets/images/poses/cow_face.png"
     },
     {
       "pose_id": "crescent_lunge",
@@ -99,7 +99,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/crescent_lunge.png"
+      "image": "assets/images/poses/crescent_lunge.png"
     },
     {
       "pose_id": "dancer",
@@ -108,7 +108,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/dancer.png"
+      "image": "assets/images/poses/dancer.png"
     },
     {
       "pose_id": "downward_dog",
@@ -117,7 +117,7 @@
         "id": 6,
         "slug": "stage-6-transitions"
       },
-      "image": "assets/images/poses/stage-6-transitions/downward_dog.png"
+      "image": "assets/images/poses/downward_dog.png"
     },
     {
       "pose_id": "easy_seat",
@@ -126,7 +126,7 @@
         "id": 1,
         "slug": "stage-1-foundations"
       },
-      "image": "assets/images/poses/stage-1-foundations/easy_seat.png"
+      "image": "assets/images/poses/easy_seat.png"
     },
     {
       "pose_id": "extended_side_angle",
@@ -135,7 +135,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/extended_side_angle.png"
+      "image": "assets/images/poses/extended_side_angle.png"
     },
     {
       "pose_id": "forward_fold",
@@ -144,7 +144,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/forward_fold.png"
+      "image": "assets/images/poses/forward_fold.png"
     },
     {
       "pose_id": "gate_pose",
@@ -153,7 +153,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/gate_pose.png"
+      "image": "assets/images/poses/gate_pose.png"
     },
     {
       "pose_id": "half_pigeon",
@@ -162,7 +162,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/half_pigeon.png"
+      "image": "assets/images/poses/half_pigeon.png"
     },
     {
       "pose_id": "half_way_lift",
@@ -171,7 +171,7 @@
         "id": 4,
         "slug": "stage-4-bridges"
       },
-      "image": "assets/images/poses/stage-4-bridges/half_way_lift.png"
+      "image": "assets/images/poses/half_way_lift.png"
     },
     {
       "pose_id": "happy_baby",
@@ -180,7 +180,7 @@
         "id": 1,
         "slug": "stage-1-foundations"
       },
-      "image": "assets/images/poses/stage-1-foundations/happy_baby.png"
+      "image": "assets/images/poses/happy_baby.png"
     },
     {
       "pose_id": "hover",
@@ -189,7 +189,7 @@
         "id": 6,
         "slug": "stage-6-transitions"
       },
-      "image": "assets/images/poses/stage-6-transitions/hover.png"
+      "image": "assets/images/poses/hover.png"
     },
     {
       "pose_id": "lizard",
@@ -198,7 +198,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/lizard.png"
+      "image": "assets/images/poses/lizard.png"
     },
     {
       "pose_id": "locust",
@@ -207,7 +207,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/locust.png"
+      "image": "assets/images/poses/locust.png"
     },
     {
       "pose_id": "low_lunge",
@@ -216,7 +216,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/low_lunge.png"
+      "image": "assets/images/poses/low_lunge.png"
     },
     {
       "pose_id": "mountain",
@@ -225,7 +225,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/mountain.png"
+      "image": "assets/images/poses/mountain.png"
     },
     {
       "pose_id": "mountain_climbers",
@@ -234,7 +234,7 @@
         "id": 6,
         "slug": "stage-6-transitions"
       },
-      "image": "assets/images/poses/stage-6-transitions/mountain_climbers.png"
+      "image": "assets/images/poses/mountain_climbers.png"
     },
     {
       "pose_id": "plank",
@@ -243,7 +243,7 @@
         "id": 6,
         "slug": "stage-6-transitions"
       },
-      "image": "assets/images/poses/stage-6-transitions/plank.png"
+      "image": "assets/images/poses/plank.png"
     },
     {
       "pose_id": "puppy_pose",
@@ -252,7 +252,7 @@
         "id": 1,
         "slug": "stage-1-foundations"
       },
-      "image": "assets/images/poses/stage-1-foundations/puppy_pose.png"
+      "image": "assets/images/poses/puppy_pose.png"
     },
     {
       "pose_id": "reverse_warrior",
@@ -261,7 +261,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/reverse_warrior.png"
+      "image": "assets/images/poses/reverse_warrior.png"
     },
     {
       "pose_id": "runners_lunge",
@@ -270,7 +270,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/runners_lunge.png"
+      "image": "assets/images/poses/runners_lunge.png"
     },
     {
       "pose_id": "seated_eagle_arms",
@@ -279,7 +279,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/seated_eagle_arms.png"
+      "image": "assets/images/poses/seated_eagle_arms.png"
     },
     {
       "pose_id": "seated_forward_fold",
@@ -288,7 +288,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/seated_forward_fold.png"
+      "image": "assets/images/poses/seated_forward_fold.png"
     },
     {
       "pose_id": "seated_side_bend",
@@ -297,7 +297,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/seated_side_bend.png"
+      "image": "assets/images/poses/seated_side_bend.png"
     },
     {
       "pose_id": "seated_twist",
@@ -306,7 +306,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/seated_twist.png"
+      "image": "assets/images/poses/seated_twist.png"
     },
     {
       "pose_id": "side_lunge",
@@ -315,7 +315,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/side_lunge.png"
+      "image": "assets/images/poses/side_lunge.png"
     },
     {
       "pose_id": "side_plank",
@@ -324,7 +324,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/side_plank.png"
+      "image": "assets/images/poses/side_plank.png"
     },
     {
       "pose_id": "sphinx",
@@ -333,7 +333,7 @@
         "id": 1,
         "slug": "stage-1-foundations"
       },
-      "image": "assets/images/poses/stage-1-foundations/sphinx.png"
+      "image": "assets/images/poses/sphinx.png"
     },
     {
       "pose_id": "squat",
@@ -342,7 +342,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/squat.png"
+      "image": "assets/images/poses/squat.png"
     },
     {
       "pose_id": "staff_pose",
@@ -351,7 +351,7 @@
         "id": 1,
         "slug": "stage-1-foundations"
       },
-      "image": "assets/images/poses/stage-1-foundations/staff_pose.png"
+      "image": "assets/images/poses/staff_pose.png"
     },
     {
       "pose_id": "standing_side_bend",
@@ -360,7 +360,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/standing_side_bend.png"
+      "image": "assets/images/poses/standing_side_bend.png"
     },
     {
       "pose_id": "supine_leg_stretch",
@@ -369,7 +369,7 @@
         "id": 1,
         "slug": "stage-1-foundations"
       },
-      "image": "assets/images/poses/stage-1-foundations/supine_leg_stretch.png"
+      "image": "assets/images/poses/supine_leg_stretch.png"
     },
     {
       "pose_id": "supine_pelvic_tilt",
@@ -378,7 +378,7 @@
         "id": 1,
         "slug": "stage-1-foundations"
       },
-      "image": "assets/images/poses/stage-1-foundations/supine_pelvic_tilt.png"
+      "image": "assets/images/poses/supine_pelvic_tilt.png"
     },
     {
       "pose_id": "supine_twist",
@@ -387,7 +387,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/supine_twist.png"
+      "image": "assets/images/poses/supine_twist.png"
     },
     {
       "pose_id": "table_top",
@@ -396,7 +396,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/table_top.png"
+      "image": "assets/images/poses/table_top.png"
     },
     {
       "pose_id": "three_legged_dog",
@@ -405,7 +405,7 @@
         "id": 4,
         "slug": "stage-4-bridges"
       },
-      "image": "assets/images/poses/stage-4-bridges/three_legged_dog.png"
+      "image": "assets/images/poses/three_legged_dog.png"
     },
     {
       "pose_id": "tree",
@@ -414,7 +414,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/tree.png"
+      "image": "assets/images/poses/tree.png"
     },
     {
       "pose_id": "triangle",
@@ -423,7 +423,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/triangle.png"
+      "image": "assets/images/poses/triangle.png"
     },
     {
       "pose_id": "warrior_one",
@@ -432,7 +432,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/warrior_one.png"
+      "image": "assets/images/poses/warrior_one.png"
     },
     {
       "pose_id": "warrior_three",
@@ -441,7 +441,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/warrior_three.png"
+      "image": "assets/images/poses/warrior_three.png"
     },
     {
       "pose_id": "warrior_two",
@@ -450,7 +450,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/warrior_two.png"
+      "image": "assets/images/poses/warrior_two.png"
     },
     {
       "pose_id": "wide_leg_forward_fold",
@@ -459,7 +459,7 @@
         "id": 2,
         "slug": "stage-2-upright"
       },
-      "image": "assets/images/poses/stage-2-upright/wide_leg_forward_fold.png"
+      "image": "assets/images/poses/wide_leg_forward_fold.png"
     },
     {
       "pose_id": "wide_leg_squat",
@@ -468,7 +468,7 @@
         "id": 3,
         "slug": "stage-3-grounded"
       },
-      "image": "assets/images/poses/stage-3-grounded/wide_leg_squat.png"
+      "image": "assets/images/poses/wide_leg_squat.png"
     },
     {
       "pose_id": "wild_thing",
@@ -477,7 +477,7 @@
         "id": 5,
         "slug": "stage-5-rotations"
       },
-      "image": "assets/images/poses/stage-5-rotations/wild_thing.png"
+      "image": "assets/images/poses/wild_thing.png"
     },
     {
       "id": "hands_to_floor",

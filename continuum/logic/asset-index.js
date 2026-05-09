@@ -12,7 +12,7 @@ const ROOT = path.resolve(__dirname, "..");
 const INDEX_PATH = path.join(ROOT, "data", "asset_index.json");
 
 const IMAGE_FALLBACKS = Object.freeze({
-  triangle: "assets/images/poses/stage-2-upright/triangle.png",
+  triangle: "assets/images/poses/triangle.png",
 });
 
 let _cache = null;
