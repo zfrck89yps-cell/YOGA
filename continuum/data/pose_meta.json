@@ -1,1218 +1,1381 @@
-{
-  "version": "1.0",
-  "generated": "2026-02-16",
-  "pose_count": 79,
-  "poses": [
-    {
-      "id": "bird_dog",
-      "regions": [
-        "core_balance",
-        "spine",
-        "hips"
-      ],
-      "patterns": [
-        "tabletop",
-        "core",
-        "balance"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "wrists",
-        "knees",
-        "lower_back"
-      ],
-      "restoreScore": 1
-    },
-    {
-      "id": "bound_angle",
-      "regions": [
-        "hips",
-        "restore_full_body"
-      ],
-      "patterns": [
-        "seated",
-        "hip_opener"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "hips",
-        "knees"
-      ],
-      "restoreScore": 2
-    },
-    {
-      "id": "bridge",
-      "regions": [
-        "posterior_chain",
-        "spine"
-      ],
-      "patterns": [
-        "supine",
-        "backbend",
-        "glutes"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "lower_back",
-        "knees"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "camel",
-      "regions": [
-        "spine",
-        "quads_legs"
-      ],
-      "patterns": [
-        "kneel",
-        "backbend"
-      ],
-      "difficultyBand": 3,
-      "contra": [
-        "lower_back",
-        "knees",
-        "neck"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "cat_cow",
-      "regions": [
-        "spine"
-      ],
-      "patterns": [
-        "tabletop",
-        "spine_mobility"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "wrists",
-        "knees"
-      ],
-      "restoreScore": 2
-    },
-    {
-      "id": "chair",
-      "regions": [
-        "quads_legs",
-        "core_balance"
-      ],
-      "patterns": [
-        "standing",
-        "squat"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "knees",
-        "ankles"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "childs_pose",
-      "regions": [
-        "spine",
-        "restore_full_body"
-      ],
-      "patterns": [
-        "kneel",
-        "forward_fold",
-        "rest"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "knees"
-      ],
-      "restoreScore": 3
-    },
-    {
-      "id": "cobra",
-      "regions": [
-        "spine",
-        "shoulders_upper_back"
-      ],
-      "patterns": [
-        "prone",
-        "backbend"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "lower_back"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "corpse",
-      "regions": [
-        "restore_full_body"
-      ],
-      "patterns": [
-        "supine",
-        "rest"
-      ],
-      "difficultyBand": 1,
-      "contra": [],
-      "restoreScore": 3
-    },
-    {
-      "id": "cow_face",
-      "regions": [
-        "hips",
-        "shoulders_upper_back"
-      ],
-      "patterns": [
-        "seated",
-        "hip_opener",
-        "shoulder_opener"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "hips",
-        "knees",
-        "shoulders"
-      ],
-      "restoreScore": 1
-    },
-    {
-      "id": "crescent_lunge",
-      "regions": [
-        "hips",
-        "quads_legs",
-        "core_balance"
-      ],
-      "patterns": [
-        "lunge",
-        "standing"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "knees",
-        "hips",
-        "ankles"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "dancer",
-      "regions": [
-        "posterior_chain",
-        "hips",
-        "core_balance"
-      ],
-      "patterns": [
-        "standing",
-        "balance",
-        "backbend"
-      ],
-      "difficultyBand": 3,
-      "contra": [
-        "knees",
-        "hips",
-        "ankles",
-        "lower_back"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "downward_dog",
-      "regions": [
-        "posterior_chain",
-        "shoulders_upper_back"
-      ],
-      "patterns": [
-        "inversion",
-        "hinge"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "wrists",
-        "shoulders",
-        "hamstrings"
-      ],
-      "restoreScore": 1
-    },
-    {
-      "id": "easy_seat",
-      "regions": [
-        "spine",
-        "restore_full_body"
-      ],
-      "patterns": [
-        "seated",
-        "rest"
-      ],
-      "difficultyBand": 1,
-      "contra": [],
-      "restoreScore": 2
-    },
-    {
-      "id": "extended_side_angle",
-      "regions": [
-        "hips",
-        "spine",
-        "core_balance"
-      ],
-      "patterns": [
-        "lunge",
-        "side_bend"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "knees",
-        "hips",
-        "shoulders"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "forward_fold",
-      "regions": [
-        "posterior_chain",
-        "spine"
-      ],
-      "patterns": [
-        "standing",
-        "hinge",
-        "forward_fold"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "hamstrings",
-        "lower_back"
-      ],
-      "restoreScore": 1
-    },
-    {
-      "id": "gate_pose",
-      "regions": [
-        "spine",
-        "hips"
-      ],
-      "patterns": [
-        "kneel",
-        "side_bend"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "knees",
-        "hips"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "half_pigeon",
-      "regions": [
-        "hips"
-      ],
-      "patterns": [
-        "seated",
-        "hip_opener"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "knees",
-        "hips"
-      ],
-      "restoreScore": 1
-    },
-    {
-      "id": "half_way_lift",
-      "regions": [
-        "spine",
-        "posterior_chain"
-      ],
-      "patterns": [
-        "standing",
-        "hinge",
-        "spine_control"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "hamstrings",
-        "lower_back"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "happy_baby",
-      "regions": [
-        "hips",
-        "spine"
-      ],
-      "patterns": [
-        "supine",
-        "hip_opener"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "hips",
-        "knees",
-        "lower_back"
-      ],
-      "restoreScore": 2
-    },
-    {
-      "id": "hover",
-      "regions": [
-        "core_balance",
-        "shoulders_upper_back"
-      ],
-      "patterns": [
-        "beast",
-        "plank",
-        "core"
-      ],
-      "difficultyBand": 3,
-      "contra": [
-        "wrists",
-        "shoulders",
-        "knees"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "lizard",
-      "regions": [
-        "hips"
-      ],
-      "patterns": [
-        "lunge",
-        "hip_opener"
-      ],
-      "difficultyBand": 3,
-      "contra": [
-        "knees",
-        "hips",
-        "ankles"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "locust",
-      "regions": [
-        "posterior_chain",
-        "spine"
-      ],
-      "patterns": [
-        "prone",
-        "posterior_chain",
-        "backbend"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "lower_back",
-        "neck"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "low_lunge",
-      "regions": [
-        "hips",
-        "quads_legs"
-      ],
-      "patterns": [
-        "lunge",
-        "kneel"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "knees",
-        "hips"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "mountain",
-      "regions": [
-        "restore_full_body",
-        "core_balance"
-      ],
-      "patterns": [
-        "standing",
-        "posture"
-      ],
-      "difficultyBand": 1,
-      "contra": [],
-      "restoreScore": 1
-    },
-    {
-      "id": "mountain_climbers",
-      "regions": [
-        "core_balance",
-        "shoulders_upper_back",
-        "hips"
-      ],
-      "patterns": [
-        "plank",
-        "dynamic"
-      ],
-      "difficultyBand": 3,
-      "contra": [
-        "wrists",
-        "shoulders",
-        "hips"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "plank",
-      "regions": [
-        "core_balance",
-        "shoulders_upper_back"
-      ],
-      "patterns": [
-        "plank",
-        "core"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "wrists",
-        "shoulders"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "puppy_pose",
-      "regions": [
-        "shoulders_upper_back",
-        "spine"
-      ],
-      "patterns": [
-        "kneel",
-        "shoulder_opener",
-        "backbend"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "shoulders",
-        "knees"
-      ],
-      "restoreScore": 2
-    },
-    {
-      "id": "reverse_warrior",
-      "regions": [
-        "spine",
-        "hips"
-      ],
-      "patterns": [
-        "standing",
-        "lunge",
-        "side_bend"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "knees",
-        "hips",
-        "lower_back"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "runners_lunge",
-      "regions": [
-        "hips",
-        "posterior_chain"
-      ],
-      "patterns": [
-        "lunge",
-        "hinge"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "knees",
-        "hips",
-        "hamstrings"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "seated_eagle_arms",
-      "regions": [
-        "shoulders_upper_back"
-      ],
-      "patterns": [
-        "seated",
-        "shoulder_opener"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "shoulders"
-      ],
-      "restoreScore": 2
-    },
-    {
-      "id": "seated_forward_fold",
-      "regions": [
-        "posterior_chain",
-        "spine"
-      ],
-      "patterns": [
-        "seated",
-        "hinge",
-        "forward_fold"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "hamstrings",
-        "lower_back"
-      ],
-      "restoreScore": 2
-    },
-    {
-      "id": "seated_side_bend",
-      "regions": [
-        "spine"
-      ],
-      "patterns": [
-        "seated",
-        "side_bend"
-      ],
-      "difficultyBand": 1,
-      "contra": [],
-      "restoreScore": 1
-    },
-    {
-      "id": "seated_twist",
-      "regions": [
-        "spine"
-      ],
-      "patterns": [
-        "seated",
-        "twist"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "lower_back"
-      ],
-      "restoreScore": 1
-    },
-    {
-      "id": "side_lunge",
-      "regions": [
-        "hips",
-        "quads_legs"
-      ],
-      "patterns": [
-        "standing",
-        "lateral_lunge"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "knees",
-        "ankles",
-        "hips"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "side_plank",
-      "regions": [
-        "core_balance",
-        "shoulders_upper_back"
-      ],
-      "patterns": [
-        "plank",
-        "side_plank",
-        "balance"
-      ],
-      "difficultyBand": 3,
-      "contra": [
-        "wrists",
-        "shoulders"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "sphinx",
-      "regions": [
-        "spine",
-        "shoulders_upper_back"
-      ],
-      "patterns": [
-        "prone",
-        "backbend"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "lower_back"
-      ],
-      "restoreScore": 1
-    },
-    {
-      "id": "squat",
-      "regions": [
-        "quads_legs",
-        "hips",
-        "core_balance"
-      ],
-      "patterns": [
-        "standing",
-        "squat"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "knees",
-        "ankles",
-        "hips"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "staff_pose",
-      "regions": [
-        "core_balance",
-        "posterior_chain"
-      ],
-      "patterns": [
-        "seated",
-        "posture",
-        "core"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "hamstrings",
-        "lower_back"
-      ],
-      "restoreScore": 1
-    },
-    {
-      "id": "standing_side_bend",
-      "regions": [
-        "spine"
-      ],
-      "patterns": [
-        "standing",
-        "side_bend"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "lower_back"
-      ],
-      "restoreScore": 1
-    },
-    {
-      "id": "supine_leg_stretch",
-      "regions": [
-        "posterior_chain",
-        "hips"
-      ],
-      "patterns": [
-        "supine",
-        "hamstring_stretch"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "hamstrings",
-        "lower_back"
-      ],
-      "restoreScore": 2
-    },
-    {
-      "id": "supine_pelvic_tilt",
-      "regions": [
-        "spine",
-        "core_balance"
-      ],
-      "patterns": [
-        "supine",
-        "core",
-        "control"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "lower_back"
-      ],
-      "restoreScore": 2
-    },
-    {
-      "id": "supine_twist",
-      "regions": [
-        "spine",
-        "restore_full_body"
-      ],
-      "patterns": [
-        "supine",
-        "twist"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "lower_back"
-      ],
-      "restoreScore": 3
-    },
-    {
-      "id": "table_top",
-      "regions": [
-        "core_balance",
-        "spine"
-      ],
-      "patterns": [
-        "tabletop"
-      ],
-      "difficultyBand": 1,
-      "contra": [
-        "wrists",
-        "knees"
-      ],
-      "restoreScore": 1
-    },
-    {
-      "id": "three_legged_dog",
-      "regions": [
-        "posterior_chain",
-        "hips",
-        "core_balance"
-      ],
-      "patterns": [
-        "inversion",
-        "hinge",
-        "balance"
-      ],
-      "difficultyBand": 3,
-      "contra": [
-        "wrists",
-        "shoulders",
-        "hamstrings",
-        "hips"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "tree",
-      "regions": [
-        "core_balance",
-        "hips"
-      ],
-      "patterns": [
-        "standing",
-        "balance"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "ankles",
-        "knees",
-        "hips"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "triangle",
-      "regions": [
-        "hips",
-        "spine",
-        "posterior_chain"
-      ],
-      "patterns": [
-        "standing",
-        "side_bend",
-        "hinge"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "hamstrings",
-        "lower_back",
-        "hips"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "warrior_one",
-      "regions": [
-        "quads_legs",
-        "hips",
-        "core_balance"
-      ],
-      "patterns": [
-        "standing",
-        "lunge"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "knees",
-        "hips",
-        "ankles"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "warrior_three",
-      "regions": [
-        "posterior_chain",
-        "core_balance"
-      ],
-      "patterns": [
-        "standing",
-        "hinge",
-        "balance"
-      ],
-      "difficultyBand": 3,
-      "contra": [
-        "hamstrings",
-        "lower_back",
-        "ankles"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "warrior_two",
-      "regions": [
-        "quads_legs",
-        "hips"
-      ],
-      "patterns": [
-        "standing",
-        "lunge",
-        "open_hips"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "knees",
-        "hips",
-        "ankles"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "wide_leg_forward_fold",
-      "regions": [
-        "posterior_chain",
-        "hips"
-      ],
-      "patterns": [
-        "standing",
-        "hinge",
-        "forward_fold",
-        "wide_stance"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "hamstrings",
-        "lower_back",
-        "hips"
-      ],
-      "restoreScore": 1
-    },
-    {
-      "id": "wide_leg_squat",
-      "regions": [
-        "quads_legs",
-        "hips"
-      ],
-      "patterns": [
-        "standing",
-        "squat",
-        "wide_stance"
-      ],
-      "difficultyBand": 2,
-      "contra": [
-        "knees",
-        "hips",
-        "ankles"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "wild_thing",
-      "regions": [
-        "shoulders_upper_back",
-        "spine"
-      ],
-      "patterns": [
-        "backbend",
-        "side_plank",
-        "rotation"
-      ],
-      "difficultyBand": 3,
-      "contra": [
-        "wrists",
-        "shoulders",
-        "lower_back"
-      ],
-      "restoreScore": 0
-    },
-    {
-      "id": "hands_to_floor",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "kneel_down",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "lower_to_belly",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "lower_to_elbows",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "lower_to_seat",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "press_to_table",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "press_up_to_seated",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "press_up_to_tabletop",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "return_to_tabletop",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "rise_up",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "roll_down",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "roll_to_back",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "roll_to_seated",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "roll_to_side",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "shift_weight_back",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "shift_weight_forward",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "step_back_lunge",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "step_back_to_plank",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "step_feet_together",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "step_feet_wider",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "step_forward_lunge",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "step_forward_to_fold",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "swing_legs_back",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "swing_legs_forward",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "walk_hands_back",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
-    },
-    {
-      "id": "walk_hands_forward",
-      "difficultyBand": 0,
-      "regions": [],
-      "patterns": [
-        "transition"
-      ],
-      "contra": [],
-      "restoreScore": 0
+[
+  {
+    "id": "bird_dog",
+    "regions": [
+      "core_balance",
+      "spine",
+      "hips"
+    ],
+    "patterns": [
+      "tabletop",
+      "core",
+      "balance"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "wrists",
+      "knees",
+      "lower_back"
+    ],
+    "restoreScore": 1,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "neutral",
+      "intensity": 2
     }
-  ],
-  "injury_tags": [
-    "stiffness",
-    "neck",
-    "shoulders",
-    "upper_back",
-    "lower_back",
-    "wrists",
-    "hips",
-    "knees",
-    "ankles",
-    "hamstrings"
-  ],
-  "regions": [
-    "spine",
-    "hips",
-    "shoulders_upper_back",
-    "posterior_chain",
-    "quads_legs",
-    "core_balance",
-    "restore_full_body"
-  ]
-}
+  },
+  {
+    "id": "bound_angle",
+    "regions": [
+      "hips",
+      "restore_full_body"
+    ],
+    "patterns": [
+      "seated",
+      "hip_opener"
+    ],
+    "difficultyBand": 1,
+    "contra": [
+      "hips",
+      "knees"
+    ],
+    "restoreScore": 2,
+    "biomech": {
+      "posture": "seated",
+      "spine": "neutral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "bridge",
+    "regions": [
+      "posterior_chain",
+      "spine"
+    ],
+    "patterns": [
+      "supine",
+      "backbend",
+      "glutes"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "lower_back",
+      "knees"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "supine",
+      "spine": "extension",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "camel",
+    "regions": [
+      "spine",
+      "quads_legs"
+    ],
+    "patterns": [
+      "kneel",
+      "backbend"
+    ],
+    "difficultyBand": 3,
+    "contra": [
+      "lower_back",
+      "knees",
+      "neck"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "extension",
+      "intensity": 3
+    }
+  },
+  {
+    "id": "cat_cow",
+    "regions": [
+      "spine"
+    ],
+    "patterns": [
+      "tabletop",
+      "spine_mobility"
+    ],
+    "difficultyBand": 1,
+    "contra": [
+      "wrists",
+      "knees"
+    ],
+    "restoreScore": 2,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "neutral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "chair",
+    "regions": [
+      "quads_legs",
+      "core_balance"
+    ],
+    "patterns": [
+      "standing",
+      "squat"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "knees",
+      "ankles"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "upright",
+      "spine": "neutral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "childs_pose",
+    "regions": [
+      "spine",
+      "restore_full_body"
+    ],
+    "patterns": [
+      "kneel",
+      "forward_fold",
+      "rest"
+    ],
+    "difficultyBand": 1,
+    "contra": [
+      "knees"
+    ],
+    "restoreScore": 3,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "flexion",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "cobra",
+    "regions": [
+      "spine",
+      "shoulders_upper_back"
+    ],
+    "patterns": [
+      "prone",
+      "backbend"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "lower_back"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "prone",
+      "spine": "extension",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "corpse",
+    "regions": [
+      "restore_full_body"
+    ],
+    "patterns": [
+      "supine",
+      "rest"
+    ],
+    "difficultyBand": 1,
+    "contra": [],
+    "restoreScore": 3,
+    "biomech": {
+      "posture": "restore",
+      "spine": "neutral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "cow_face",
+    "regions": [
+      "hips",
+      "shoulders_upper_back"
+    ],
+    "patterns": [
+      "seated",
+      "hip_opener",
+      "shoulder_opener"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "hips",
+      "knees",
+      "shoulders"
+    ],
+    "restoreScore": 1,
+    "biomech": {
+      "posture": "seated",
+      "spine": "neutral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "crescent_lunge",
+    "regions": [
+      "hips",
+      "quads_legs",
+      "core_balance"
+    ],
+    "patterns": [
+      "lunge",
+      "standing"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "knees",
+      "hips",
+      "ankles"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "upright",
+      "spine": "neutral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "dancer",
+    "regions": [
+      "posterior_chain",
+      "hips",
+      "core_balance"
+    ],
+    "patterns": [
+      "standing",
+      "balance",
+      "backbend"
+    ],
+    "difficultyBand": 3,
+    "contra": [
+      "hips",
+      "ankles",
+      "lower_back"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "upright",
+      "spine": "extension",
+      "intensity": 4
+    }
+  },
+  {
+    "id": "downward_dog",
+    "regions": [
+      "posterior_chain",
+      "shoulders_upper_back",
+      "spine"
+    ],
+    "patterns": [
+      "inversion",
+      "hinge"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "wrists",
+      "shoulders"
+    ],
+    "restoreScore": 1,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "neutral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "easy_seat",
+    "regions": [
+      "restore_full_body"
+    ],
+    "patterns": [
+      "seated",
+      "rest"
+    ],
+    "difficultyBand": 1,
+    "contra": [],
+    "restoreScore": 3,
+    "biomech": {
+      "posture": "seated",
+      "spine": "neutral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "extended_side_angle",
+    "regions": [
+      "hips",
+      "quads_legs",
+      "shoulders_upper_back"
+    ],
+    "patterns": [
+      "lunge",
+      "side_bend"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "hips",
+      "knees",
+      "shoulders"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "upright",
+      "spine": "lateral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "forward_fold",
+    "regions": [
+      "posterior_chain",
+      "spine"
+    ],
+    "patterns": [
+      "standing",
+      "hinge",
+      "forward_fold"
+    ],
+    "difficultyBand": 1,
+    "contra": [
+      "hamstrings",
+      "lower_back"
+    ],
+    "restoreScore": 1,
+    "biomech": {
+      "posture": "upright",
+      "spine": "flexion",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "gate_pose",
+    "regions": [
+      "hips",
+      "spine"
+    ],
+    "patterns": [
+      "kneel",
+      "side_bend"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "knees",
+      "hips"
+    ],
+    "restoreScore": 1,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "lateral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "half_pigeon",
+    "regions": [
+      "hips",
+      "spine"
+    ],
+    "patterns": [
+      "seated",
+      "hip_opener"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "hips",
+      "knees"
+    ],
+    "restoreScore": 2,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "neutral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "half_way_lift",
+    "regions": [
+      "spine",
+      "posterior_chain"
+    ],
+    "patterns": [
+      "standing",
+      "hinge",
+      "spine_control"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "lower_back",
+      "hamstrings"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "upright",
+      "spine": "neutral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "happy_baby",
+    "regions": [
+      "hips",
+      "spine",
+      "restore_full_body"
+    ],
+    "patterns": [
+      "supine",
+      "hip_opener"
+    ],
+    "difficultyBand": 1,
+    "contra": [
+      "hips",
+      "lower_back"
+    ],
+    "restoreScore": 3,
+    "biomech": {
+      "posture": "supine",
+      "spine": "neutral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "hover",
+    "regions": [
+      "core_balance",
+      "shoulders_upper_back"
+    ],
+    "patterns": [
+      "beast",
+      "plank",
+      "core"
+    ],
+    "difficultyBand": 3,
+    "contra": [
+      "wrists",
+      "shoulders",
+      "lower_back"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "neutral",
+      "intensity": 4
+    }
+  },
+  {
+    "id": "lizard",
+    "regions": [
+      "hips",
+      "quads_legs"
+    ],
+    "patterns": [
+      "lunge",
+      "hip_opener"
+    ],
+    "difficultyBand": 3,
+    "contra": [
+      "hips",
+      "knees",
+      "ankles"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "neutral",
+      "intensity": 3
+    }
+  },
+  {
+    "id": "locust",
+    "regions": [
+      "posterior_chain",
+      "spine",
+      "shoulders_upper_back"
+    ],
+    "patterns": [
+      "prone",
+      "posterior_chain",
+      "backbend"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "lower_back",
+      "neck"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "prone",
+      "spine": "extension",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "low_lunge",
+    "regions": [
+      "hips",
+      "quads_legs"
+    ],
+    "patterns": [
+      "lunge",
+      "kneel"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "knees",
+      "hips"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "neutral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "mountain",
+    "regions": [
+      "core_balance",
+      "quads_legs"
+    ],
+    "patterns": [
+      "standing",
+      "posture"
+    ],
+    "difficultyBand": 1,
+    "contra": [],
+    "restoreScore": 1,
+    "biomech": {
+      "posture": "upright",
+      "spine": "neutral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "mountain_climbers",
+    "regions": [
+      "core_balance",
+      "quads_legs"
+    ],
+    "patterns": [
+      "plank",
+      "dynamic"
+    ],
+    "difficultyBand": 3,
+    "contra": [
+      "wrists",
+      "lower_back",
+      "shoulders"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "neutral",
+      "intensity": 4
+    }
+  },
+  {
+    "id": "plank",
+    "regions": [
+      "core_balance",
+      "shoulders_upper_back"
+    ],
+    "patterns": [
+      "plank",
+      "core"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "wrists",
+      "shoulders",
+      "lower_back"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "neutral",
+      "intensity": 3
+    }
+  },
+  {
+    "id": "puppy_pose",
+    "regions": [
+      "shoulders_upper_back",
+      "spine"
+    ],
+    "patterns": [
+      "kneel",
+      "shoulder_opener",
+      "backbend"
+    ],
+    "difficultyBand": 1,
+    "contra": [
+      "wrists",
+      "knees",
+      "shoulders"
+    ],
+    "restoreScore": 2,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "extension",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "reverse_warrior",
+    "regions": [
+      "hips",
+      "quads_legs",
+      "spine"
+    ],
+    "patterns": [
+      "standing",
+      "lunge",
+      "side_bend"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "hips",
+      "knees"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "upright",
+      "spine": "lateral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "runners_lunge",
+    "regions": [
+      "hips",
+      "posterior_chain",
+      "quads_legs"
+    ],
+    "patterns": [
+      "lunge",
+      "hinge"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "hips",
+      "knees",
+      "hamstrings"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "neutral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "seated_eagle_arms",
+    "regions": [
+      "shoulders_upper_back"
+    ],
+    "patterns": [
+      "seated",
+      "shoulder_opener"
+    ],
+    "difficultyBand": 1,
+    "contra": [
+      "shoulders"
+    ],
+    "restoreScore": 2,
+    "biomech": {
+      "posture": "seated",
+      "spine": "neutral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "seated_forward_fold",
+    "regions": [
+      "posterior_chain",
+      "spine"
+    ],
+    "patterns": [
+      "seated",
+      "hinge",
+      "forward_fold"
+    ],
+    "difficultyBand": 1,
+    "contra": [
+      "hamstrings",
+      "lower_back"
+    ],
+    "restoreScore": 2,
+    "biomech": {
+      "posture": "seated",
+      "spine": "flexion",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "seated_side_bend",
+    "regions": [
+      "spine",
+      "shoulders_upper_back"
+    ],
+    "patterns": [
+      "seated",
+      "side_bend"
+    ],
+    "difficultyBand": 1,
+    "contra": [],
+    "restoreScore": 2,
+    "biomech": {
+      "posture": "seated",
+      "spine": "lateral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "seated_twist",
+    "regions": [
+      "spine",
+      "hips"
+    ],
+    "patterns": [
+      "seated",
+      "twist"
+    ],
+    "difficultyBand": 1,
+    "contra": [
+      "lower_back"
+    ],
+    "restoreScore": 2,
+    "biomech": {
+      "posture": "seated",
+      "spine": "rotation",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "side_lunge",
+    "regions": [
+      "hips",
+      "quads_legs"
+    ],
+    "patterns": [
+      "standing",
+      "lateral_lunge"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "knees",
+      "hips",
+      "ankles"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "upright",
+      "spine": "neutral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "side_plank",
+    "regions": [
+      "core_balance",
+      "shoulders_upper_back"
+    ],
+    "patterns": [
+      "plank",
+      "side_plank",
+      "balance"
+    ],
+    "difficultyBand": 3,
+    "contra": [
+      "wrists",
+      "shoulders"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "neutral",
+      "intensity": 4
+    }
+  },
+  {
+    "id": "sphinx",
+    "regions": [
+      "spine",
+      "shoulders_upper_back"
+    ],
+    "patterns": [
+      "prone",
+      "backbend"
+    ],
+    "difficultyBand": 1,
+    "contra": [
+      "lower_back"
+    ],
+    "restoreScore": 1,
+    "biomech": {
+      "posture": "prone",
+      "spine": "extension",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "squat",
+    "regions": [
+      "hips",
+      "quads_legs"
+    ],
+    "patterns": [
+      "standing",
+      "squat"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "knees",
+      "hips",
+      "ankles"
+    ],
+    "restoreScore": 1,
+    "biomech": {
+      "posture": "upright",
+      "spine": "neutral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "staff_pose",
+    "regions": [
+      "posterior_chain",
+      "core_balance"
+    ],
+    "patterns": [
+      "seated",
+      "posture",
+      "core"
+    ],
+    "difficultyBand": 1,
+    "contra": [
+      "hamstrings"
+    ],
+    "restoreScore": 1,
+    "biomech": {
+      "posture": "seated",
+      "spine": "neutral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "standing_side_bend",
+    "regions": [
+      "spine",
+      "shoulders_upper_back"
+    ],
+    "patterns": [
+      "standing",
+      "side_bend"
+    ],
+    "difficultyBand": 1,
+    "contra": [],
+    "restoreScore": 1,
+    "biomech": {
+      "posture": "upright",
+      "spine": "lateral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "supine_leg_stretch",
+    "regions": [
+      "posterior_chain",
+      "hips"
+    ],
+    "patterns": [
+      "supine",
+      "hamstring_stretch"
+    ],
+    "difficultyBand": 1,
+    "contra": [
+      "hamstrings",
+      "lower_back"
+    ],
+    "restoreScore": 2,
+    "biomech": {
+      "posture": "supine",
+      "spine": "neutral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "supine_pelvic_tilt",
+    "regions": [
+      "spine",
+      "core_balance"
+    ],
+    "patterns": [
+      "supine",
+      "core",
+      "control"
+    ],
+    "difficultyBand": 1,
+    "contra": [],
+    "restoreScore": 2,
+    "biomech": {
+      "posture": "supine",
+      "spine": "neutral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "supine_twist",
+    "regions": [
+      "spine",
+      "hips",
+      "restore_full_body"
+    ],
+    "patterns": [
+      "supine",
+      "twist"
+    ],
+    "difficultyBand": 1,
+    "contra": [
+      "lower_back"
+    ],
+    "restoreScore": 3,
+    "biomech": {
+      "posture": "supine",
+      "spine": "rotation",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "table_top",
+    "regions": [
+      "core_balance",
+      "spine"
+    ],
+    "patterns": [
+      "tabletop"
+    ],
+    "difficultyBand": 1,
+    "contra": [
+      "wrists",
+      "knees"
+    ],
+    "restoreScore": 1,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "neutral",
+      "intensity": 1
+    }
+  },
+  {
+    "id": "three_legged_dog",
+    "regions": [
+      "posterior_chain",
+      "hips",
+      "core_balance"
+    ],
+    "patterns": [
+      "inversion",
+      "hinge",
+      "balance"
+    ],
+    "difficultyBand": 3,
+    "contra": [
+      "wrists",
+      "shoulders",
+      "hamstrings"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "neutral",
+      "intensity": 3
+    }
+  },
+  {
+    "id": "tree",
+    "regions": [
+      "core_balance",
+      "hips",
+      "quads_legs"
+    ],
+    "patterns": [
+      "standing",
+      "balance"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "hips",
+      "ankles"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "upright",
+      "spine": "neutral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "triangle",
+    "regions": [
+      "hips",
+      "posterior_chain",
+      "spine"
+    ],
+    "patterns": [
+      "standing",
+      "side_bend",
+      "hinge"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "hips",
+      "hamstrings"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "upright",
+      "spine": "lateral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "warrior_one",
+    "regions": [
+      "hips",
+      "quads_legs",
+      "core_balance"
+    ],
+    "patterns": [
+      "standing",
+      "lunge"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "hips",
+      "knees",
+      "ankles"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "upright",
+      "spine": "neutral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "warrior_three",
+    "regions": [
+      "core_balance",
+      "posterior_chain",
+      "hips"
+    ],
+    "patterns": [
+      "standing",
+      "hinge",
+      "balance"
+    ],
+    "difficultyBand": 3,
+    "contra": [
+      "hips",
+      "ankles",
+      "hamstrings"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "upright",
+      "spine": "neutral",
+      "intensity": 4
+    }
+  },
+  {
+    "id": "warrior_two",
+    "regions": [
+      "hips",
+      "quads_legs",
+      "core_balance"
+    ],
+    "patterns": [
+      "standing",
+      "lunge",
+      "open_hips"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "hips",
+      "knees",
+      "ankles"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "upright",
+      "spine": "neutral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "wide_leg_forward_fold",
+    "regions": [
+      "posterior_chain",
+      "hips",
+      "spine"
+    ],
+    "patterns": [
+      "standing",
+      "hinge",
+      "forward_fold",
+      "wide_stance"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "hamstrings",
+      "lower_back"
+    ],
+    "restoreScore": 1,
+    "biomech": {
+      "posture": "upright",
+      "spine": "flexion",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "wide_leg_squat",
+    "regions": [
+      "hips",
+      "quads_legs"
+    ],
+    "patterns": [
+      "standing",
+      "squat",
+      "wide_stance"
+    ],
+    "difficultyBand": 2,
+    "contra": [
+      "knees",
+      "hips",
+      "ankles"
+    ],
+    "restoreScore": 1,
+    "biomech": {
+      "posture": "upright",
+      "spine": "neutral",
+      "intensity": 2
+    }
+  },
+  {
+    "id": "wild_thing",
+    "regions": [
+      "spine",
+      "shoulders_upper_back",
+      "hips"
+    ],
+    "patterns": [
+      "backbend",
+      "side_plank",
+      "rotation"
+    ],
+    "difficultyBand": 3,
+    "contra": [
+      "wrists",
+      "shoulders",
+      "lower_back"
+    ],
+    "restoreScore": 0,
+    "biomech": {
+      "posture": "grounded",
+      "spine": "extension",
+      "intensity": 4
+    }
+  },
+  {
+    "id": "hands_to_floor",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "kneel_down",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "lower_to_belly",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "lower_to_elbows",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "lower_to_seat",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "press_to_table",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "press_up_to_seated",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "press_up_to_tabletop",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "return_to_tabletop",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "rise_up",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "roll_down",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "roll_to_back",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "roll_to_seated",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "roll_to_side",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "shift_weight_back",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "shift_weight_forward",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "step_back_lunge",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "step_back_to_plank",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "step_feet_together",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "step_feet_wider",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "step_forward_lunge",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "step_forward_to_fold",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "swing_legs_back",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "swing_legs_forward",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "walk_hands_back",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  },
+  {
+    "id": "walk_hands_forward",
+    "patterns": [
+      "transition"
+    ],
+    "difficultyBand": 0
+  }
+]
