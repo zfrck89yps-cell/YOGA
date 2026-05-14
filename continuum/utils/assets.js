@@ -26,7 +26,7 @@ export function normalizePoseMeta(raw) {
 }
 
 const FALLBACK_IMAGES = {
-  triangle: "assets/images/poses/triangle.png",
+  triangle: "assets/poses/triangle.png",
 };
 
 export function buildAssetResolver(assetIndexJson) {

@@ -59,7 +59,7 @@ const PROFILES = Object.freeze({
       enabled: true,
       peakCap: 4,
     }),
-    // Build: still allow transitions, but slightly tighter so it doesn't become a "transition soup"
+    // Build: still allow transitions, but slightly tighter so it doesn’t become a "transition soup"
     transitionPolicy: Object.freeze({
       maxTransitions: 8,
       macroOnly: false,

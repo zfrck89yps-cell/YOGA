@@ -71,17 +71,17 @@ return "foundation";
 export function loadEngineState() {
 try {
 const raw = storage.getItem(KEY);
-if (!raw) return { …DEFAULTS };
+if (!raw) return { ...DEFAULTS };
 const parsed = JSON.parse(raw);
-return { …DEFAULTS, …parsed, stage: canonicalizeStage(parsed?.stage) };
+return { ...DEFAULTS, ...parsed, stage: canonicalizeStage(parsed?.stage) };
 } catch {
-return { …DEFAULTS };
+return { ...DEFAULTS };
 }
 }
 
 export function saveEngineState(state) {
 storage.setItem(KEY, JSON.stringify({
-…state,
+...state,
 stage: canonicalizeStage(state?.stage),
 }));
 }

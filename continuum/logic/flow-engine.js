@@ -283,7 +283,7 @@ score += Math.max(0, intensity - ctx.targetIntensity) * 2;
 score += getEmphasisBias(ctx.emphasisKey, p) * 1.5;
 score += Math.random() * 1.0;
 
-// Penalise if it can't legally follow the last placed pose
+// Penalise if it can’t legally follow the last placed pose
 if (ctx.lastPose && !canFollow(p, ctx.lastPose, ctx.sessionSoFar)) score += 200;
 
 return score;
@@ -331,7 +331,7 @@ postures: ["grounded", "seated"],        maxI: 3,        targetI: 2 },
 let total = base.reduce((sum, p) => sum + p.count, 0);
 while (total < buildSlots) { base[3].count += 1; total += 1; }
 while (total > buildSlots) {
-const reducible = […base].reverse().find((p) => p.count > 1 && p.name !== "integration") || base[0];
+const reducible = [...base].reverse().find((p) => p.count > 1 && p.name !== "integration") || base[0];
 reducible.count -= 1;
 total -= 1;
 }
@@ -431,7 +431,6 @@ for (const phase of phasePlan) {
 for (let i = 0; i < phase.count; i++) {
 const lastPose = selected[selected.length - 1] || null;
 
-```
   const picked = pickForPhase(usablePool, {
     usedSet,
     recentSet,
@@ -458,7 +457,6 @@ const lastPose = selected[selected.length - 1] || null;
     }
   }
 }
-```
 
 }
 
@@ -466,7 +464,6 @@ const lastPose = selected[selected.length - 1] || null;
 while (selected.length < target - (endPose ? 1 : 0)) {
 const lastPose = selected[selected.length - 1] || null;
 
-```
 let fallback = usablePool
   .filter((p) => !usedSet.has(getId(p)))
   .filter((p) => !lastPose || canFollow(p, lastPose, selected))
@@ -484,7 +481,6 @@ if (!fallback) {
 if (!fallback) break;
 selected.push(fallback);
 usedSet.add(getId(fallback));
-```
 
 }
 
@@ -497,7 +493,6 @@ let final = selected.filter(Boolean);
 while (final.length > target) {
 let removeIdx = -1;
 
-```
 for (let i = 1; i < final.length - 1; i++) {
   const curr = final[i];
   if (getEmphasisBias(emphasisKey, curr) >= 0) {
@@ -519,7 +514,6 @@ for (let i = 1; i < final.length - 1; i++) {
 
 if (removeIdx === -1) removeIdx = final.length - 2;
 final.splice(removeIdx, 1);
-```
 
 }
 
