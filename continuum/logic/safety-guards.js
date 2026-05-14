@@ -139,36 +139,31 @@ const allowed = [];
 const blocked = [];
 
 for (const p of poses) {
-// First check explicit contra list on the pose itself
-const explicitContra = hasAny(p?.contra, tags);
+  const explicitContra = hasAny(p?.contra, tags);
+  const lowerBackBlock   = (tags.has("lower_back") || tags.has("low_back"))   && blocksForLowerBack(p);
+  const kneeBlock        = (tags.has("knees")       || tags.has("knee"))       && blocksForKnees(p);
+  const wristBlock       = (tags.has("wrists")      || tags.has("wrist"))      && blocksForWrists(p);
+  const hipBlock         = tags.has("hips")                                    && blocksForHips(p);
+  const shoulderBlock    = (tags.has("shoulders")   || tags.has("shoulder"))   && blocksForShoulders(p);
+  const neckBlock        = tags.has("neck")                                    && blocksForNeck(p);
+  const ankleBlock       = (tags.has("ankles")      || tags.has("ankle"))      && blocksForAnkles(p);
+  const hamstringBlock   = (tags.has("hamstrings")  || tags.has("hamstring"))  && blocksForHamstrings(p);
 
-```
-const lowerBackBlock   = (tags.has("lower_back") || tags.has("low_back"))   && blocksForLowerBack(p);
-const kneeBlock        = (tags.has("knees")       || tags.has("knee"))       && blocksForKnees(p);
-const wristBlock       = (tags.has("wrists")      || tags.has("wrist"))      && blocksForWrists(p);
-const hipBlock         = tags.has("hips")                                    && blocksForHips(p);
-const shoulderBlock    = (tags.has("shoulders")   || tags.has("shoulder"))   && blocksForShoulders(p);
-const neckBlock        = tags.has("neck")                                    && blocksForNeck(p);
-const ankleBlock       = (tags.has("ankles")      || tags.has("ankle"))      && blocksForAnkles(p);
-const hamstringBlock   = (tags.has("hamstrings")  || tags.has("hamstring"))  && blocksForHamstrings(p);
-
-if (
-  explicitContra ||
-  lowerBackBlock ||
-  kneeBlock ||
-  wristBlock ||
-  hipBlock ||
-  shoulderBlock ||
-  neckBlock ||
-  ankleBlock ||
-  hamstringBlock
-) {
-  blocked.push(p);
-} else {
-  allowed.push(p);
-}
-```
-
+  if (
+    explicitContra ||
+    lowerBackBlock ||
+    kneeBlock ||
+    wristBlock ||
+    hipBlock ||
+    shoulderBlock ||
+    neckBlock ||
+    ankleBlock ||
+    hamstringBlock
+  ) {
+    blocked.push(p);
+  } else {
+    allowed.push(p);
+  }
 }
 
 return { allowed, blocked };
