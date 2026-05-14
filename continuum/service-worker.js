@@ -1,5 +1,5 @@
-const CACHE = "continuum-yoga-hike-shell-v2";
-const RUNTIME = "continuum-yoga-hike-runtime-v2";
+const CACHE = "continuum-yoga-hike-shell-v3";
+const RUNTIME = "continuum-yoga-hike-runtime-v3";
 
 const SHELL = [
   "./",
