@@ -7,16 +7,16 @@ import {
 filterContraindicated,
 getSafetyBias,
 normalizeInjuryTags,
-} from “./safety-guards.js”;
+} from "./safety-guards.js";
 
 import {
 loadProgress,
 computeSessionDifficulty,
 maxBandFromEffectiveDifficulty,
-} from “./progression-engine.js”;
+} from "./progression-engine.js";
 
-const START_POSE_ID = “easy_seat”;
-const END_POSE_ID = “corpse”;
+const START_POSE_ID = "easy_seat";
+const END_POSE_ID = "corpse";
 const DEFAULT_POSE_COUNT = 13;
 
 // —————————————————————————
@@ -26,29 +26,29 @@ const DEFAULT_POSE_COUNT = 13;
 // Poses that may ONLY appear directly after one of their listed predecessors.
 // If none of these predecessors are in the session, the pose is excluded.
 const REQUIRED_PREDECESSORS = {
-wild_thing:      [“downward_dog”, “three_legged_dog”, “side_plank”],
-hover:           [“plank”],
-three_legged_dog:[“downward_dog”],
-lizard:          [“runners_lunge”, “low_lunge”, “downward_dog”],
-half_pigeon:     [“downward_dog”, “three_legged_dog”, “low_lunge”, “lizard”],
-bird_dog:        [“table_top”, “cat_cow”],
+wild_thing:      ["downward_dog", "three_legged_dog", "side_plank"],
+hover:           ["plank"],
+three_legged_dog:["downward_dog"],
+lizard:          ["runners_lunge", "low_lunge", "downward_dog"],
+half_pigeon:     ["downward_dog", "three_legged_dog", "low_lunge", "lizard"],
+bird_dog:        ["table_top", "cat_cow"],
 };
 
 // After these poses, the listed pose MUST follow immediately (mandatory counter or pair).
 const REQUIRED_SUCCESSORS = {
-camel:           “childs_pose”,   // backbend → must be countered
-three_legged_dog:“low_lunge”,     // step the lifted leg forward
+camel:           "childs_pose",   // backbend → must be countered
+three_legged_dog:"low_lunge",     // step the lifted leg forward
 };
 
 // Forbidden direct transitions: [from_posture, to_posture].
 // The posture values match biomech.posture in pose_meta.json.
 const FORBIDDEN_POSTURE_TRANSITIONS = new Set([
-“upright>supine”,
-“upright>restore”,
-“supine>upright”,
-“restore>upright”,
-“prone>upright”,
-“upright>prone”,
+"upright>supine",
+"upright>restore",
+"supine>upright",
+"restore>upright",
+"prone>upright",
+"upright>prone",
 ]);
 
 // —————————————————————————
@@ -69,8 +69,8 @@ return arr[Math.floor(Math.random() * arr.length)];
 }
 
 function getId(p) {
-if (!p) return “”;
-return String(p.id ?? p.poseId ?? p.pose_id ?? “”);
+if (!p) return "";
+return String(p.id ?? p.poseId ?? p.pose_id ?? "");
 }
 
 function asPoseArray(poseMeta) {
@@ -104,20 +104,20 @@ if (p?.biomech?.posture) return p.biomech.posture;
 const id = getId(p).toLowerCase();
 const pats = patternsOf(p);
 
-if (id === END_POSE_ID) return “restore”;
-if (pats.includes(“supine”)) return “supine”;
-if (pats.includes(“prone”)) return “prone”;
-if (pats.includes(“seated”)) return “seated”;
-if (pats.includes(“tabletop”) || pats.includes(“kneel”) || pats.includes(“all_fours”)) return “grounded”;
-if (pats.includes(“standing”) || pats.includes(“upright”) || pats.includes(“lunge”)) return “upright”;
+if (id === END_POSE_ID) return "restore";
+if (pats.includes("supine")) return "supine";
+if (pats.includes("prone")) return "prone";
+if (pats.includes("seated")) return "seated";
+if (pats.includes("tabletop") || pats.includes("kneel") || pats.includes("all_fours")) return "grounded";
+if (pats.includes("standing") || pats.includes("upright") || pats.includes("lunge")) return "upright";
 
-if (id.includes(“warrior”) || id.includes(“lunge”) || id === “chair” || id === “mountain” || id.includes(“triangle”)) return “upright”;
-if (id.includes(“plank”) || id.includes(“hover”) || id === “cat_cow” || id === “table_top” || id === “puppy_pose” || id === “childs_pose” || id === “downward_dog”) return “grounded”;
-if (id.includes(“seated”) || id === “staff_pose” || id === “bound_angle” || id === “half_pigeon” || id === “cow_face”) return “seated”;
-if (id.includes(“supine”) || id === “happy_baby” || id === “bridge”) return “supine”;
-if ([“sphinx”, “cobra”, “locust”].includes(id)) return “prone”;
+if (id.includes("warrior") || id.includes("lunge") || id === "chair" || id === "mountain" || id.includes("triangle")) return "upright";
+if (id.includes("plank") || id.includes("hover") || id === "cat_cow" || id === "table_top" || id === "puppy_pose" || id === "childs_pose" || id === "downward_dog") return "grounded";
+if (id.includes("seated") || id === "staff_pose" || id === "bound_angle" || id === "half_pigeon" || id === "cow_face") return "seated";
+if (id.includes("supine") || id === "happy_baby" || id === "bridge") return "supine";
+if (["sphinx", "cobra", "locust"].includes(id)) return "prone";
 
-return “grounded”;
+return "grounded";
 }
 
 function deriveIntensity(p) {
@@ -128,40 +128,40 @@ return clamp(band + 1, 1, 5);
 }
 
 function deriveSpine(p) {
-return p?.biomech?.spine || “neutral”;
+return p?.biomech?.spine || "neutral";
 }
 
 function isRealPose(p) {
 const id = getId(p);
 if (!id) return false;
 if (toNum(p?.difficultyBand, 1) === 0) return false;
-if (patternsOf(p).includes(“transition”)) return false;
+if (patternsOf(p).includes("transition")) return false;
 return true;
 }
 
 function isUnilateralPose(p) {
 const id = getId(p).toLowerCase();
 const pats = patternsOf(p);
-if (pats.includes(“bilateral”)) return false;
+if (pats.includes("bilateral")) return false;
 if (id === START_POSE_ID || id === END_POSE_ID) return false;
 return (
-pats.includes(“unilateral”) ||
-pats.includes(“single_side”) ||
-pats.includes(“lunge”) ||
-pats.includes(“balance”) ||
-id.includes(“warrior”) ||
-id.includes(“lunge”) ||
-id.includes(“triangle”) ||
-id.includes(“side_angle”) ||
-id.includes(“pigeon”) ||
-id.includes(“dancer”) ||
-id.includes(“tree”) ||
-id.includes(“three_legged”) ||
-id.includes(“gate”) ||
-id.includes(“side_bend”) ||
-id.includes(“twist”) ||
-id.includes(“bird_dog”) ||
-id.includes(“side_plank”)
+pats.includes("unilateral") ||
+pats.includes("single_side") ||
+pats.includes("lunge") ||
+pats.includes("balance") ||
+id.includes("warrior") ||
+id.includes("lunge") ||
+id.includes("triangle") ||
+id.includes("side_angle") ||
+id.includes("pigeon") ||
+id.includes("dancer") ||
+id.includes("tree") ||
+id.includes("three_legged") ||
+id.includes("gate") ||
+id.includes("side_bend") ||
+id.includes("twist") ||
+id.includes("bird_dog") ||
+id.includes("side_plank")
 );
 }
 
@@ -226,38 +226,38 @@ return true;
 // —————————————————————————
 
 function getEmphasisBias(emphasisKey, pose) {
-const key = String(emphasisKey || “”).toLowerCase();
-if (!key || key === “full_body”) return 0;
+const key = String(emphasisKey || "").toLowerCase();
+if (!key || key === "full_body") return 0;
 
 let score = 0;
 switch (key) {
-case “hips”:
-if (hasRegion(pose, “hips”)) score -= 6;
-if (hasPattern(pose, “hip_opener”) || hasPattern(pose, “hip_opening”)) score -= 3;
+case "hips":
+if (hasRegion(pose, "hips")) score -= 6;
+if (hasPattern(pose, "hip_opener") || hasPattern(pose, "hip_opening")) score -= 3;
 break;
-case “spine”:
-if (hasRegion(pose, “spine”)) score -= 6;
-if (hasPattern(pose, “twist”) || hasPattern(pose, “spine_mobility”) || hasPattern(pose, “side_bend”)) score -= 2;
+case "spine":
+if (hasRegion(pose, "spine")) score -= 6;
+if (hasPattern(pose, "twist") || hasPattern(pose, "spine_mobility") || hasPattern(pose, "side_bend")) score -= 2;
 break;
-case “shoulders_upper_back”:
-if (hasRegion(pose, “shoulders_upper_back”) || hasRegion(pose, “shoulders”) || hasRegion(pose, “upper_back”)) score -= 6;
-if (hasPattern(pose, “shoulder_opener”)) score -= 3;
+case "shoulders_upper_back":
+if (hasRegion(pose, "shoulders_upper_back") || hasRegion(pose, "shoulders") || hasRegion(pose, "upper_back")) score -= 6;
+if (hasPattern(pose, "shoulder_opener")) score -= 3;
 break;
-case “posterior_chain”:
-if (hasRegion(pose, “posterior_chain”)) score -= 6;
-if (hasPattern(pose, “hinge”) || hasPattern(pose, “forward_fold”) || hasPattern(pose, “posterior_chain”)) score -= 2;
+case "posterior_chain":
+if (hasRegion(pose, "posterior_chain")) score -= 6;
+if (hasPattern(pose, "hinge") || hasPattern(pose, "forward_fold") || hasPattern(pose, "posterior_chain")) score -= 2;
 break;
-case “quads_legs”:
-if (hasRegion(pose, “quads_legs”)) score -= 6;
-if (hasPattern(pose, “standing”) || hasPattern(pose, “squat”) || hasPattern(pose, “lunge”)) score -= 2;
+case "quads_legs":
+if (hasRegion(pose, "quads_legs")) score -= 6;
+if (hasPattern(pose, "standing") || hasPattern(pose, "squat") || hasPattern(pose, "lunge")) score -= 2;
 break;
-case “core_balance”:
-if (hasRegion(pose, “core_balance”)) score -= 6;
-if (hasPattern(pose, “core”) || hasPattern(pose, “balance”) || hasPattern(pose, “plank”)) score -= 3;
+case "core_balance":
+if (hasRegion(pose, "core_balance")) score -= 6;
+if (hasPattern(pose, "core") || hasPattern(pose, "balance") || hasPattern(pose, "plank")) score -= 3;
 break;
-case “restore_full_body”:
-if (hasRegion(pose, “restore_full_body”)) score -= 5;
-if (hasPattern(pose, “rest”) || hasPattern(pose, “supine”) || hasPattern(pose, “seated”)) score -= 2;
+case "restore_full_body":
+if (hasRegion(pose, "restore_full_body")) score -= 5;
+if (hasPattern(pose, "rest") || hasPattern(pose, "supine") || hasPattern(pose, "seated")) score -= 2;
 break;
 default:
 break;
@@ -283,7 +283,7 @@ score += Math.max(0, intensity - ctx.targetIntensity) * 2;
 score += getEmphasisBias(ctx.emphasisKey, p) * 1.5;
 score += Math.random() * 1.0;
 
-// Penalise if it can’t legally follow the last placed pose
+// Penalise if it can't legally follow the last placed pose
 if (ctx.lastPose && !canFollow(p, ctx.lastPose, ctx.sessionSoFar)) score += 200;
 
 return score;
@@ -310,28 +310,28 @@ return pickRandom(scored.slice(0, Math.min(3, scored.length))).p;
 function buildPhasePlan({ stage, emphasisKey, energy, mood, maxBand, targetPoseCount }) {
 const buildSlots = Math.max(0, targetPoseCount - 2); // start + corpse reserved
 const lowerEnergy = Number(energy) <= 2 || Number(mood) <= 2;
-const foundation = stage === “foundation”;
-const restoreBias = emphasisKey === “restore_full_body” || lowerEnergy;
+const foundation = stage === "foundation";
+const restoreBias = emphasisKey === "restore_full_body" || lowerEnergy;
 
 const buildMax = restoreBias ? Math.min(2, maxBand + 1) : Math.min(4, maxBand + 1);
 
 // Ordered arc: seated/grounded warmup → upright peak → grounded downshift → supine/restore.
 // This enforces the legal posture arc: seated→grounded→upright→grounded→seated→supine→restore.
 const base = [
-{ name: “arrival”,      count: 1, postures: [“seated”],                    maxI: 2,        targetI: 1 },
-{ name: “warmup”,       count: 2, postures: [“seated”, “grounded”],        maxI: 2,        targetI: 2 },
-{ name: “groundedBuild”,count: 2, postures: [“grounded”],                  maxI: buildMax, targetI: 2 },
-{ name: “uprightBuild”, count: foundation || restoreBias ? 2 : 3,
-postures: [“upright”],                   maxI: buildMax, targetI: 3 },
-{ name: “downshift”,    count: foundation || restoreBias ? 2 : 1,
-postures: [“grounded”, “seated”],        maxI: 3,        targetI: 2 },
-{ name: “integration”,  count: 2, postures: [“seated”, “supine”],          maxI: 2,        targetI: 1 },
+{ name: "arrival",      count: 1, postures: ["seated"],                    maxI: 2,        targetI: 1 },
+{ name: "warmup",       count: 2, postures: ["seated", "grounded"],        maxI: 2,        targetI: 2 },
+{ name: "groundedBuild",count: 2, postures: ["grounded"],                  maxI: buildMax, targetI: 2 },
+{ name: "uprightBuild", count: foundation || restoreBias ? 2 : 3,
+postures: ["upright"],                   maxI: buildMax, targetI: 3 },
+{ name: "downshift",    count: foundation || restoreBias ? 2 : 1,
+postures: ["grounded", "seated"],        maxI: 3,        targetI: 2 },
+{ name: "integration",  count: 2, postures: ["seated", "supine"],          maxI: 2,        targetI: 1 },
 ];
 
 let total = base.reduce((sum, p) => sum + p.count, 0);
 while (total < buildSlots) { base[3].count += 1; total += 1; }
 while (total > buildSlots) {
-const reducible = […base].reverse().find((p) => p.count > 1 && p.name !== “integration”) || base[0];
+const reducible = […base].reverse().find((p) => p.count > 1 && p.name !== "integration") || base[0];
 reducible.count -= 1;
 total -= 1;
 }
@@ -364,9 +364,9 @@ arcProfile,
 }
 
 function chooseArcProfile({ mood, energy, emphasisKey }) {
-if (emphasisKey === “restore_full_body” || Number(energy) <= 2 || Number(mood) <= 2) return “D”;
-if (Number(energy) >= 4 && Number(mood) >= 3) return “A”;
-return “B”;
+if (emphasisKey === "restore_full_body" || Number(energy) <= 2 || Number(mood) <= 2) return "D";
+if (Number(energy) >= 4 && Number(mood) >= 3) return "A";
+return "B";
 }
 
 // —————————————————————————
@@ -375,8 +375,8 @@ return “B”;
 
 export function buildSession({
 poseMeta,
-emphasisKey = “full_body”,
-stage = “foundation”,
+emphasisKey = "full_body",
+stage = "foundation",
 mood = 3,
 energy = 3,
 injuryTags = [],
@@ -402,7 +402,7 @@ injuryTags: tags,
 
 let maxBand = maxBandFromEffectiveDifficulty(eff);
 maxBand = Math.max(1, maxBand);
-if (stage !== “foundation” && Number(energy) >= 4) maxBand = Math.min(3, maxBand + 1);
+if (stage !== "foundation" && Number(energy) >= 4) maxBand = Math.min(3, maxBand + 1);
 if (safetyBias?.difficultyBandMaxOverride != null) maxBand = Math.min(maxBand, safetyBias.difficultyBandMaxOverride);
 
 const startPose = allowed.find((p) => getId(p) === START_POSE_ID) || poseArr.find((p) => getId(p) === START_POSE_ID) || null;
