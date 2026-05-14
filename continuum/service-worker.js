@@ -1,9 +1,9 @@
-const CACHE = "continuum-yoga-hike-shell-v4";
-const RUNTIME = "continuum-yoga-hike-runtime-v4";
+const CACHE = "continuum-yoga-hike-shell-v5";
+const RUNTIME = "continuum-yoga-hike-runtime-v5";
 
+// Never cache the HTML document — always fetch fresh so Vite's injected
+// HMR script tags don't get locked in and break the app after a server restart.
 const SHELL = [
-  "./",
-  "./index.html",
   "./styles.css",
   "./app.js",
   "./utils/assets.js",
@@ -20,11 +20,8 @@ const SHELL = [
   "./assets/icons/icon-512.png"
 ];
 
-// Data files use network-first so the app always gets fresh paths/content.
-const DATA = [
-  "./data/pose_meta.json",
-  "./data/asset_index.json",
-];
+// Data files: network-first so image paths are always up to date.
+const DATA_SUFFIXES = ["/data/pose_meta.json", "/data/asset_index.json"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -38,7 +35,7 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys()
       .then((keys) => Promise.all(
-        keys.filter((key) => ![CACHE, RUNTIME].includes(key)).map((key) => caches.delete(key))
+        keys.filter((k) => k !== CACHE && k !== RUNTIME).map((k) => caches.delete(k))
       ))
       .then(() => self.clients.claim())
   );
@@ -47,17 +44,19 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const req = event.request;
   const url = new URL(req.url);
+
+  // Only handle same-origin GETs.
   if (url.origin !== location.origin || req.method !== "GET") return;
 
-  // Network-first for data JSON files — never serve stale paths from cache.
-  if (DATA.some((p) => url.pathname.endsWith(p.replace(".", "")))) {
+  // Let HTML navigation go straight to network — never serve cached HTML.
+  if (req.destination === "document" || url.pathname === "/" || url.pathname.endsWith(".html")) return;
+
+  // Network-first for JSON data files.
+  if (DATA_SUFFIXES.some((s) => url.pathname.endsWith(s))) {
     event.respondWith(
       fetch(req)
         .then((res) => {
-          if (res && res.ok) {
-            const copy = res.clone();
-            caches.open(RUNTIME).then((cache) => cache.put(req, copy));
-          }
+          if (res?.ok) caches.open(RUNTIME).then((c) => c.put(req, res.clone()));
           return res;
         })
         .catch(() => caches.match(req))
@@ -65,15 +64,12 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Cache-first for everything else (app shell + images).
+  // Cache-first for JS, CSS, images.
   event.respondWith(
     caches.match(req).then((cached) => {
       if (cached) return cached;
       return fetch(req).then((res) => {
-        if (res && res.ok) {
-          const copy = res.clone();
-          caches.open(RUNTIME).then((cache) => cache.put(req, copy));
-        }
+        if (res?.ok) caches.open(RUNTIME).then((c) => c.put(req, res.clone()));
         return res;
       });
     })
