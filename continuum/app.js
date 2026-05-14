@@ -8,6 +8,20 @@ const STORE_KEY = "continuum.grid.v3";
 const RESET_AFTER_DAYS = 28;
 const FIXED_POSE_COUNT = 13;
 
+window.addEventListener("error", (event) => {
+  console.error("Unhandled error:", event.error || event.message || event);
+  if (root) {
+    root.innerHTML = `<main class="app-bg home-bg"><section class="panel error"><h1>Continuum failed to load</h1><p>${(event.error && event.error.message) || event.message || "An unexpected error occurred."}</p></section></main>`;
+  }
+});
+
+window.addEventListener("unhandledrejection", (event) => {
+  console.error("Unhandled promise rejection:", event.reason);
+  if (root) {
+    root.innerHTML = `<main class="app-bg home-bg"><section class="panel error"><h1>Continuum failed to load</h1><p>${(event.reason && event.reason.message) || String(event.reason)}</p></section></main>`;
+  }
+});
+
 const EMPHASIS_LABELS = {
   full_body: "full body",
   spine: "spine",

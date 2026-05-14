@@ -254,7 +254,7 @@
     "uniquePoseCountUsed": 46,
     "averageDifficultyFirst28": 1.08,
     "averageDifficultyLast28": 1.12,
-    "trianglePath": "assets/images/poses/stage-2-upright/triangle.png"
+    "trianglePath": "assets/poses/triangle.png"
   },
   "sessions": [
     {
