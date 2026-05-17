@@ -1,0 +1,54 @@
+{
+  "testedAt": "2026-05-17T18:50:49.320Z",
+  "parameter": "mood",
+  "errors": [],
+  "results": [
+    {
+      "test": "1. Effective difficulty scales +0.04 per mood step (half of energy)",
+      "effByMood": {
+        "1": 0.27,
+        "2": 0.31,
+        "3": 0.35,
+        "4": 0.39,
+        "5": 0.43
+      },
+      "deltaPerStep": 0.04
+    },
+    {
+      "test": "2. Arc profile: mood ≤2 → D; mood ≥3 + energy ≥4 → A; else → B",
+      "casesChecked": 10
+    },
+    {
+      "test": "3. Mood ≤ 2 triggers restore bias — fewer upright poses (same mechanism as low energy)",
+      "avgUprightByMood": {
+        "1": 2,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 3
+      },
+      "avgLowMood_1_2": 2,
+      "avgHighMood_3_5": 3
+    },
+    {
+      "test": "4. Mood does NOT boost maxBand (unlike energy ≥ 4)",
+      "energy3_mood3_maxBand": 2,
+      "energy3_mood5_maxBand": 2,
+      "energy4_mood3_maxBand": 3,
+      "note": "mood varies → maxBand unchanged; energy=4 → maxBand increases"
+    },
+    {
+      "test": "5. All mood levels produce valid sessions (count, no duplicates, mood preserved)",
+      "sessionsChecked": 50
+    },
+    {
+      "test": "6. mood=1 reduces completion delta to 35%; mood 2–5 are full weight",
+      "fullDelta": 0.0012,
+      "mood1_delta": 0.00042,
+      "mood2_delta": 0.0012,
+      "mood3_delta": 0.0012,
+      "mood5_delta": 0.0012,
+      "reductionFactor": "35% (×0.35) for mood=1 only"
+    }
+  ]
+}
