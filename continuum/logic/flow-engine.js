@@ -500,14 +500,16 @@ for (let i = 1; i < final.length - 1; i++) {
     const prevPosture = derivePosture(final[i - 1]);
     const nextPosture = derivePosture(final[i + 1]);
     if (!isForbiddenPostureTransition(prevPosture, nextPosture)) {
-      // Also check no required predecessor is broken
+      // Also check no required predecessor of the next pose is broken
       const nextPose = final[i + 1];
       const nextId = getId(nextPose);
       const nextReqs = REQUIRED_PREDECESSORS[nextId];
-      if (!nextReqs || nextReqs.includes(getId(final[i - 1]))) {
-        removeIdx = i;
-        break;
-      }
+      if (nextReqs && !nextReqs.includes(getId(final[i - 1]))) continue;
+      // Also check this pose is not the required successor of its predecessor
+      const prevId = getId(final[i - 1]);
+      if (REQUIRED_SUCCESSORS[prevId] === getId(curr)) continue;
+      removeIdx = i;
+      break;
     }
   }
 }

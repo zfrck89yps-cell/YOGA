@@ -1,0 +1,58 @@
+{
+  "testedAt": "2026-05-28T20:29:31.367Z",
+  "suite": "session-structure",
+  "sessionCount": 108,
+  "errors": [],
+  "results": [
+    {
+      "test": "1. easy_seat always first, corpse always last",
+      "sessionsChecked": 108
+    },
+    {
+      "test": "2. No forbidden posture transitions between any consecutive pair",
+      "forbiddenPairs": [
+        "upright>supine",
+        "upright>restore",
+        "supine>upright",
+        "restore>upright",
+        "prone>upright",
+        "upright>prone"
+      ],
+      "consecutivePairsChecked": 1296,
+      "violations": 0
+    },
+    {
+      "test": "3. Required successors: camel → childs_pose, three_legged_dog → low_lunge (when triggered)",
+      "camel_appearances": 2,
+      "three_legged_dog_appearances": 0,
+      "camel_ruleCorrect": 2,
+      "three_legged_dog_ruleCorrect": 0
+    },
+    {
+      "test": "4. Required predecessors satisfied whenever a restricted pose appears",
+      "restrictedPoses": [
+        "wild_thing",
+        "hover",
+        "three_legged_dog",
+        "lizard",
+        "half_pigeon",
+        "bird_dog"
+      ],
+      "appearances": {
+        "half_pigeon": "seen 8×, rule satisfied 8×",
+        "bird_dog": "seen 7×, rule satisfied 7×"
+      }
+    },
+    {
+      "test": "5. Every step has poseId, bothSides (bool), regions[], patterns[], difficultyBand, derived.posture/intensity/spine, arcProfile",
+      "stepsChecked": 1404
+    },
+    {
+      "test": "6. bothSides is false for known bilateral poses, true for known unilateral poses",
+      "bilateralChecked": 692,
+      "unilateralChecked": 483,
+      "wrongBilateral": [],
+      "wrongUnilateral": []
+    }
+  ]
+}
