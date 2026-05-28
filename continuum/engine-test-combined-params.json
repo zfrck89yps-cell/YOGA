@@ -1,0 +1,42 @@
+{
+  "testedAt": "2026-05-28T20:18:46.877Z",
+  "parameter": "mood × energy × injuryTags",
+  "errors": [],
+  "results": [
+    {
+      "test": "1. Effective difficulty: energy (+0.08/step) + mood (+0.04/step) + injury (−0.07 flat) are additive",
+      "base_eff": 0.4,
+      "casesChecked": 8,
+      "clampingConfirmed": "energy=1, mood=1, injury → raw=0.09 clamped to 0.12"
+    },
+    {
+      "test": "2. Injury band cap always overrides energy's maxBand boost (injury wins last)",
+      "energy4_noInjury_maxBand": 3,
+      "energy4_structural_maxBand": 1,
+      "energy4_softTissue_maxBand": 2,
+      "energy5_structural_maxBand": 1
+    },
+    {
+      "test": "3. Restore bias: triggered by energy≤2 or mood≤2 only — injury alone does not trigger it",
+      "allInjuries_normalEnergyMood_arcProfile": "B (confirmed for all 8 injury types)",
+      "lowEnergy_injury_arcProfile": "D",
+      "lowMood_injury_arcProfile": "D",
+      "allSuppressed_arcProfile": "D",
+      "note": "injuries may reduce actual upright pose count via pool depletion — that is distinct from restore bias"
+    },
+    {
+      "test": "4. Energy intensity filter (energy≤2) and injury pose filter apply simultaneously",
+      "injuryUsed": "hamstrings",
+      "blockedByInjury": 12,
+      "sessionsChecked": 15
+    },
+    {
+      "test": "5. Minimum constraints (energy=1, mood=1, structural injury) still produce 13 valid poses",
+      "sessionsChecked": 32
+    },
+    {
+      "test": "6. Full combination grid — 8 energy/mood pairs × 5 injury scenarios × 2 stages all produce valid sessions",
+      "sessionsChecked": 80
+    }
+  ]
+}
