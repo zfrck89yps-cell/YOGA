@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-05-28T20:29:31.367Z",
+  "testedAt": "2026-05-28T20:31:23.317Z",
   "suite": "session-structure",
   "sessionCount": 108,
   "errors": [],
@@ -39,8 +39,9 @@
         "bird_dog"
       ],
       "appearances": {
-        "half_pigeon": "seen 8×, rule satisfied 8×",
-        "bird_dog": "seen 7×, rule satisfied 7×"
+        "lizard": "seen 3×, rule satisfied 3×",
+        "half_pigeon": "seen 2×, rule satisfied 2×",
+        "bird_dog": "seen 9×, rule satisfied 9×"
       }
     },
     {
@@ -49,8 +50,8 @@
     },
     {
       "test": "6. bothSides is false for known bilateral poses, true for known unilateral poses",
-      "bilateralChecked": 692,
-      "unilateralChecked": 483,
+      "bilateralChecked": 668,
+      "unilateralChecked": 477,
       "wrongBilateral": [],
       "wrongUnilateral": []
     }

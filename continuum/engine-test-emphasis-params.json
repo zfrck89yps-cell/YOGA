@@ -1,30 +1,30 @@
 {
-  "testedAt": "2026-05-28T20:22:27.619Z",
+  "testedAt": "2026-05-28T20:31:23.223Z",
   "parameter": "emphasisKey",
   "errors": [],
   "results": [
     {
       "test": "1. Foundation overrides emphasisKey to full_body for pose picking (bias suppressed)",
-      "avgHipsMatches_foundation": 5.13,
-      "avgHipsMatches_build": 9.7,
+      "avgHipsMatches_foundation": 5.27,
+      "avgHipsMatches_build": 9.87,
       "note": "build sessions have more hips-region poses because the bias is active there"
     },
     {
       "test": "2. Each emphasis produces more matching-region poses than a full_body session",
       "avgMatchingPoses_biased": {
         "spine": 11,
-        "hips": 9.73,
+        "hips": 9.63,
         "shoulders_upper_back": 6.67,
-        "posterior_chain": 7.27,
-        "quads_legs": 4.63,
-        "core_balance": 6.33
+        "posterior_chain": 7.33,
+        "quads_legs": 4.6,
+        "core_balance": 6.37
       },
       "avgMatchingPoses_baseline": {
-        "spine": 6.2,
-        "hips": 5.4,
-        "shoulders_upper_back": 3.1,
-        "posterior_chain": 2.8,
-        "quads_legs": 3.27,
+        "spine": 5.93,
+        "hips": 5.73,
+        "shoulders_upper_back": 3,
+        "posterior_chain": 2.47,
+        "quads_legs": 2.67,
         "core_balance": 2.07
       }
     },
