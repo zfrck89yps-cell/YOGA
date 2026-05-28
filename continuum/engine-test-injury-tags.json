@@ -1,0 +1,52 @@
+{
+  "testedAt": "2026-05-28T20:11:07.531Z",
+  "parameter": "injuryTags",
+  "errors": [],
+  "results": [
+    {
+      "test": "1. Blocked poses never appear in working poses (all 8 injury types)",
+      "sessionsChecked": 80,
+      "blockedPoseCountByTag": {
+        "lower_back": 20,
+        "knees": 25,
+        "wrists": 15,
+        "neck": 10,
+        "hips": 27,
+        "shoulders": 12,
+        "ankles": 20,
+        "hamstrings": 12
+      },
+      "violations": 0
+    },
+    {
+      "test": "2. Safety bias: structural injuries cap maxBand=1, soft-tissue cap maxBand=2",
+      "structuralCap": 1,
+      "softTissueCap": 2,
+      "tagsChecked": 8
+    },
+    {
+      "test": "3. Any injury reduces effectiveDifficulty by exactly −0.07 (flat, not per-tag)",
+      "baselineEff": 0.4,
+      "expectedEff_withInjury": 0.33,
+      "tagsChecked": 8
+    },
+    {
+      "test": "4. Multiple injuries: strictest band cap wins; −0.07 difficulty penalty does not compound",
+      "lower_back_hips_cap": 1,
+      "hips_hamstrings_cap": 2,
+      "twoInjuries_effDrop": 0.07,
+      "allInjuries_effDrop": 0.07
+    },
+    {
+      "test": "5. Empty tags → no poses blocked, no difficulty penalty, no band cap",
+      "totalPoses": 79,
+      "allowedWithNoTags": 79,
+      "blockedWithNoTags": 0,
+      "effWithNoTags": 0.4
+    },
+    {
+      "test": "6. Sessions remain valid (13 poses, no duplicates) across all 8 injury types",
+      "sessionsChecked": 64
+    }
+  ]
+}
