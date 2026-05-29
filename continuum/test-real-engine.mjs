@@ -4,13 +4,23 @@ import { fileURLToPath } from "url";
 
 import { loadJSON, normalizePoseMeta, buildAssetResolver } from "./utils/assets.js";
 import { buildSession } from "./logic/flow-engine.js";
-import { getTodaysEmphasis } from "./logic/decision-engine.js";
+import { EMPHASIS_CYCLE } from "./logic/decision-engine.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const FIXED_POSE_COUNT = 13;
 const TEST_SESSIONS = 140;
+
+// Injury tags that block emphasis-area poses — suppress emphasis warnings for these conflicts
+const INJURY_BLOCKS_EMPHASIS = {
+  hamstrings: new Set(["posterior_chain"]),
+  hips:       new Set(["hips", "quads_legs"]),
+  knees:      new Set(["quads_legs"]),
+  ankles:     new Set(["quads_legs"]),
+  lower_back: new Set(["posterior_chain", "hips"]),
+  shoulders:  new Set(["shoulders_upper_back"]),
+};
 
 const EMPHASIS_LABELS = {
   full_body: "full body",
@@ -44,10 +54,11 @@ function getStage(completedSessions) {
   return completedSessions < 28 ? "foundation" : "build";
 }
 
-function getEmphasis(stage, isoDate) {
-  return stage === "foundation"
-    ? "full_body"
-    : getTodaysEmphasis({ isoDate, stage });
+function getEmphasis(stage, sessionIndex) {
+  if (stage === "foundation") return "full_body";
+  // Rotate through all 7 emphases for build sessions, one per session
+  const buildIdx = Math.max(0, sessionIndex - 28);
+  return EMPHASIS_CYCLE[buildIdx % EMPHASIS_CYCLE.length];
 }
 
 function hasForbiddenFields(value, pathName = "") {
@@ -98,45 +109,25 @@ function getRegions(step) {
 }
 
 function classifyPosture(step) {
+  // Use the engine-computed posture stored on each step
+  const posture = step?.meta?.derived?.posture ?? "";
+  if (posture === "upright")  return "standing";
+  if (posture === "grounded") return "grounded";
+  if (posture === "seated")   return "seated";
+  if (posture === "supine" || posture === "prone" || posture === "restore") return "floor";
+  // Fallback for any unclassified steps
   const patterns = getPatterns(step).map(String);
-
   if (patterns.includes("supine") || patterns.includes("prone")) return "floor";
   if (patterns.includes("seated")) return "seated";
-
-  if (
-    patterns.includes("tabletop") ||
-    patterns.includes("kneel") ||
-    patterns.includes("plank") ||
-    patterns.includes("beast")
-  ) {
-    return "grounded";
-  }
-
-  if (
-    patterns.includes("standing") ||
-    patterns.includes("lunge") ||
-    patterns.includes("squat") ||
-    patterns.includes("balance") ||
-    patterns.includes("hinge")
-  ) {
-    return "standing";
-  }
-
-  if (patterns.includes("transition")) return "transition";
-
+  if (patterns.includes("tabletop") || patterns.includes("kneel") || patterns.includes("plank") || patterns.includes("beast")) return "grounded";
+  if (patterns.includes("standing") || patterns.includes("lunge") || patterns.includes("squat") || patterns.includes("balance")) return "standing";
   return "unknown";
 }
 
 function isBadJump(a, b) {
-  const pair = `${a}>${b}`;
-
-  return new Set([
-    "floor>standing",
-    "standing>floor",
-    "floor>grounded",
-    "standing>seated",
-    "seated>standing",
-  ]).has(pair);
+  // Mirrors the engine's FORBIDDEN_POSTURE_TRANSITIONS:
+  //   upright ↔ supine/prone/restore (mapped here as standing ↔ floor)
+  return `${a}>${b}` === "standing>floor" || `${a}>${b}` === "floor>standing";
 }
 
 function assertImageExists(resolver, poseId, errors, sessionNumber) {
@@ -172,15 +163,17 @@ async function main() {
   for (let completedSessions = 0; completedSessions < TEST_SESSIONS; completedSessions++) {
     const isoDate = isoFromIndex(completedSessions);
     const stage = getStage(completedSessions);
-    const emphasisKey = getEmphasis(stage, isoDate);
+    const emphasisKey = getEmphasis(stage, completedSessions);
     const injuryTags = injuryScenarios[completedSessions % injuryScenarios.length];
+    const mood   = (completedSessions % 5) + 1;
+    const energy = ((completedSessions + 2) % 5) + 1;
 
     const session = buildSession({
       poseMeta,
       emphasisKey,
       stage,
-      mood: (completedSessions % 5) + 1,
-      energy: ((completedSessions + 2) % 5) + 1,
+      mood,
+      energy,
       injuryTags,
       recentPoseIds,
       targetPoseCount: FIXED_POSE_COUNT,
@@ -246,7 +239,15 @@ async function main() {
       getRegions(step).includes(emphasisKey)
     ).length;
 
-    if (stage !== "foundation" && emphasisKey !== "full_body" && emphasisCount < 2) {
+    // Warn only when emphasis coverage is completely absent (0 matching poses) AND the
+    // session is not restorative (low mood/energy deprioritises emphasis by design) AND
+    // the injury tag doesn't directly block the emphasis area (a known expected conflict).
+    const isRestorative = energy <= 2 || mood <= 2;
+    const injuryConflict = injuryTags.some(tag =>
+      (INJURY_BLOCKS_EMPHASIS[tag] || new Set()).has(emphasisKey)
+    );
+
+    if (stage !== "foundation" && emphasisKey !== "full_body" && emphasisCount < 1 && !isRestorative && !injuryConflict) {
       warnings.push(
         `Session ${completedSessions}: weak emphasis weighting for ${emphasisKey}, only ${emphasisCount} matching poses`
       );

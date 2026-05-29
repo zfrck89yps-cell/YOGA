@@ -294,7 +294,9 @@ const candidates = pool
 .filter((p) => !ctx.usedSet.has(getId(p)))
 .filter((p) => ctx.allowedPostures.includes(derivePosture(p)))
 .filter((p) => deriveIntensity(p) <= ctx.maxIntensity)
-.filter((p) => !ctx.lastPose || canFollow(p, ctx.lastPose, ctx.sessionSoFar));
+.filter((p) => !ctx.lastPose || canFollow(p, ctx.lastPose, ctx.sessionSoFar))
+// Don't pick a pose whose required successor is already used — successor can't follow it
+.filter((p) => { const sid = REQUIRED_SUCCESSORS[getId(p)]; return !sid || !ctx.usedSet.has(sid); });
 
 if (!candidates.length) return null;
 const scored = candidates
@@ -517,6 +519,36 @@ for (let i = 1; i < final.length - 1; i++) {
 if (removeIdx === -1) removeIdx = final.length - 2;
 final.splice(removeIdx, 1);
 
+}
+
+// — Post-trim: swap out any upright pose sitting directly before corpse —
+if (final.length >= 2 && endPose) {
+const secondLastIdx = final.length - 2;
+const secondLast    = final[secondLastIdx];
+const endPosture    = derivePosture(endPose);
+if (secondLast && isForbiddenPostureTransition(derivePosture(secondLast), endPosture)) {
+  // Never swap if this pose is the required successor of its predecessor (e.g. childs_pose after camel)
+  const prevPose = secondLastIdx >= 1 ? final[secondLastIdx - 1] : null;
+  const isRequiredSuccessor = prevPose && REQUIRED_SUCCESSORS[getId(prevPose)] === getId(secondLast);
+  if (!isRequiredSuccessor) {
+    const usedIds  = new Set(final.map(getId));
+    const prevPost = prevPose ? derivePosture(prevPose) : "";
+    const replacement = allowed
+      .filter(p => !usedIds.has(getId(p)) && getId(p) !== START_POSE_ID && getId(p) !== END_POSE_ID)
+      .filter(p => {
+        const post = derivePosture(p);
+        const okFromPrev = !prevPost || !isForbiddenPostureTransition(prevPost, post);
+        const okToEnd   = !isForbiddenPostureTransition(post, endPosture);
+        return okFromPrev && okToEnd;
+      })
+      .sort((a, b) => toNum(a.difficultyBand, 1) - toNum(b.difficultyBand, 1))[0];
+    if (replacement) {
+      final[secondLastIdx] = replacement;
+    } else {
+      final.splice(secondLastIdx, 1);
+    }
+  }
+}
 }
 
 return {
