@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-05-29T21:14:52.494Z",
+  "testedAt": "2026-05-31T08:47:34.443Z",
   "suite": "session-structure",
   "sessionCount": 108,
   "errors": [],
@@ -23,9 +23,9 @@
     },
     {
       "test": "3. Required successors: camel → childs_pose, three_legged_dog → low_lunge (when triggered)",
-      "camel_appearances": 2,
+      "camel_appearances": 1,
       "three_legged_dog_appearances": 0,
-      "camel_ruleCorrect": 2,
+      "camel_ruleCorrect": 1,
       "three_legged_dog_ruleCorrect": 0
     },
     {
@@ -39,8 +39,10 @@
         "bird_dog"
       ],
       "appearances": {
-        "half_pigeon": "seen 9×, rule satisfied 9×",
-        "bird_dog": "seen 10×, rule satisfied 10×"
+        "hover": "seen 1×, rule satisfied 1×",
+        "lizard": "seen 1×, rule satisfied 1×",
+        "half_pigeon": "seen 7×, rule satisfied 7×",
+        "bird_dog": "seen 9×, rule satisfied 9×"
       }
     },
     {
@@ -49,7 +51,7 @@
     },
     {
       "test": "6. bothSides is false for known bilateral poses, true for known unilateral poses",
-      "bilateralChecked": 654,
+      "bilateralChecked": 663,
       "unilateralChecked": 493,
       "wrongBilateral": [],
       "wrongUnilateral": []
