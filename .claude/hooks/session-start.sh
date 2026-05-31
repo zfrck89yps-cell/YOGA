@@ -20,4 +20,4 @@ npm install --prefix continuum
 # Kills any existing instance first so restarts are safe
 pkill -f "node server.js" 2>/dev/null || true
 nohup node server.js >> /tmp/yoga-server.log 2>&1 &
-echo "App server started on port 1024 (PID $!)"
+echo "App server started on port 3000 (PID $!)"

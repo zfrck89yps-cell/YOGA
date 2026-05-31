@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'continuum')))
 /**
  *  server and port
  **/
-var port = process.env.PORT || 1024
+var port = process.env.PORT || 3000
 app.listen(port, function () {
     console.log('Server is listen on port', String(port).blue)
     
