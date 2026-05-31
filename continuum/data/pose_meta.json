@@ -899,7 +899,8 @@
     ],
     "patterns": [
       "supine",
-      "hamstring_stretch"
+      "hamstring_stretch",
+      "single_side"
     ],
     "difficultyBand": 1,
     "contra": [

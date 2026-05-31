@@ -1,0 +1,52 @@
+{
+  "testedAt": "2026-05-31T08:47:33.639Z",
+  "parameter": "energy",
+  "errors": [],
+  "results": [
+    {
+      "test": "1. Effective difficulty scales +0.08 per energy step",
+      "effByEnergy": {
+        "1": 0.19,
+        "2": 0.27,
+        "3": 0.35,
+        "4": 0.43,
+        "5": 0.51
+      }
+    },
+    {
+      "test": "2. Arc profile: energy ≤2 → D, energy ≥4 + mood ≥3 → A, else → B",
+      "casesChecked": 10
+    },
+    {
+      "test": "3. Intensity-4 poses excluded when energy ≤ 2",
+      "intensity4PosesInDataset": 6,
+      "sessionsChecked": 24,
+      "violations": 0
+    },
+    {
+      "test": "4. maxBand boosted +1 for energy ≥ 4 in build/maintain (not foundation)",
+      "energy3_eff": 0.4,
+      "energy3_maxBand": 2,
+      "energy4_eff": 0.48,
+      "energy4_maxBand": 3,
+      "energy5_maxBand": 3,
+      "foundation_energy4_maxBand": 2
+    },
+    {
+      "test": "5. All energy levels produce valid sessions (count, no duplicates, energy preserved)",
+      "sessionsChecked": 50
+    },
+    {
+      "test": "6. Low energy (≤2) produces shallower upright phase than high energy (≥3)",
+      "avgUprightByEnergy": {
+        "1": 2,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 3
+      },
+      "avgLowEnergy_1_2": 2,
+      "avgHighEnergy_3_5": 3
+    }
+  ]
+}
