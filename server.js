@@ -11,7 +11,7 @@ var colors = require('colors')
 /**
  *  static folder
  **/
-app.use(express.static(path.join(__dirname, '.')))
+app.use(express.static(path.join(__dirname, 'continuum')))
 
 /**
  *  server and port
